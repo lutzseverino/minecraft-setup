@@ -14,6 +14,8 @@
       "package.json",
       "schema/**/*.json",
       "scripts/**/*.mjs",
+      "!scripts/validate.mjs",
+      "!scripts/validate-issue-contract.mjs",
       "spec/**/*.md",
       "src/**/*.mjs",
       "test/**/*.mjs"
