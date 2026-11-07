@@ -1,31 +1,10 @@
 # Documentation
 
-Documentation is organized by reader intent.
+Maintained guidance for integrating and developing Minecraft Setup Protocol.
 
-## Sections
+- [Usage](usage/README.md): protocol concepts and versioning for integrators.
+- [Development](development/README.md): setup, validation, and writing documentation.
+- [Agent configuration](agents/README.md): repository workflow configuration for agents.
 
-- `how-to/` solves focused operational or implementation tasks.
-- `reference/` captures factual lookup material.
-- `explanation/` records concepts, rationale, and architecture.
-- `_templates/` contains starting points for new documents.
-
-## Writing Rules
-
-- Choose the section by reader intent, not by topic.
-- Keep documents durable and reader-oriented.
-- Keep examples concrete only when they clarify durable guidance.
-- Keep temporary plans and implementation checklists in issues.
-- Link new documents from the nearest section README.
-- Use the templates in `_templates/` when creating a new document.
-
-## Documents
-
-- [How-To Guides](how-to/README.md)
-- [Reference](reference/README.md)
-- [Explanation](explanation/README.md)
-- [Templates](_templates/README.md)
-
-## Repository Notes
-
-Normative wire contracts remain under [`spec/`](../spec/README.md) so
-explanatory prose cannot silently change conformance requirements.
+Normative wire contracts remain under [spec](../spec/README.md), separate from
+explanatory guidance and the JavaScript reference implementation.

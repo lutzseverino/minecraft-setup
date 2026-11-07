@@ -2,6 +2,8 @@
   <h1>Minecraft Setup Protocol</h1>
   <p>The language-neutral contract between Minecraft setup publishers and client setup managers.</p>
 
+  [![Node.js 24](https://img.shields.io/badge/Node.js-24-339933)](https://nodejs.org/)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-reference-F7DF1E)](src)
   [![CI](https://github.com/lutzseverino/minecraft-setup-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup-protocol/actions/workflows/ci.yml)
   [![Releases](https://img.shields.io/github/v/release/lutzseverino/minecraft-setup-protocol?include_prereleases)](https://github.com/lutzseverino/minecraft-setup-protocol/releases)
   [![License: MIT](https://img.shields.io/badge/license-MIT-2f3437)](LICENSE)
@@ -56,23 +58,14 @@ manager before joining. It is a workflow signal, not remote proof that the
 player's files remain unchanged. Servers needing a trusted client handshake
 must use a separately reviewed client component.
 
-## Development
-
-Install Node.js 24 and npm 11.6.2, then:
-
-```bash
-npm ci
-npm run check
-```
-
-`npm run check` formats and lints the maintained protocol artifacts, runs the
-reference implementation tests, and validates every conformance fixture.
-
 ## Documentation
 
-Start with the [documentation index](docs/README.md). Documentation is organized
-by reader intent so durable guidance has one predictable home.
+[Documentation index](docs/README.md)
+
+## Contributing
+
+[Contributing](CONTRIBUTING.md)
 
 ## License
 
-Minecraft Setup Protocol is available under the [MIT License](LICENSE).
+[MIT License](LICENSE)
