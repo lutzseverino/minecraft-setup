@@ -8,3 +8,5 @@ Maintained guidance for integrating and developing Minecraft Setup Protocol.
 
 Normative wire contracts remain under [spec](../spec/README.md), separate from
 explanatory guidance and the JavaScript reference implementation.
+
+- [Architecture decisions](adr/README.md): repository boundaries and migration decisions.
