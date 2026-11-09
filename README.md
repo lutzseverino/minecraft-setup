@@ -3,6 +3,8 @@
   <p>A desktop app and Paper plugin that help players prepare a Minecraft client for a server.</p>
 
   [![Node.js 24](https://img.shields.io/badge/Node.js-24-339933)](https://nodejs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6)](https://www.typescriptlang.org/)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   [![Rust](https://img.shields.io/badge/Rust-stable-000000)](https://www.rust-lang.org/)
   [![Java 21](https://img.shields.io/badge/Java-21-ED8B00)](https://adoptium.net/)
   [![CI](https://github.com/lutzseverino/minecraft-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup/actions/workflows/ci.yml)
@@ -38,7 +40,7 @@ signatures remain a separate verification mechanism.
 
 Enter a Minecraft server address in the manager, review its requested setup,
 and approve the plan. Server operators can follow the publisher's
-[first setup tutorial](publisher/docs/tutorials/publish-your-first-setup.md).
+[first setup tutorial](publisher/docs/usage/tutorials/publish-your-first-setup.md).
 Keep its login gate off until discovery and attestation are tested.
 
 ## Documentation

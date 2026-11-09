@@ -64,7 +64,9 @@ must use a separately reviewed client component.
 
 ## Shared development
 
-Run component commands from `protocol/`. Follow the
+From `protocol/`, run `npm run check` for lint, tests and fixtures, or
+`npm run format` to apply Biome formatting. The versioned JSON schemas in
+`schema/` configure the reference validator. Follow the
 [shared setup and validation](../docs/development/README.md) and
 [contribution guide](../CONTRIBUTING.md). Future releases use `protocol-v…` tags in
 [Minecraft Setup](https://github.com/lutzseverino/minecraft-setup/releases).

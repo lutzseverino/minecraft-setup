@@ -53,5 +53,5 @@ end-to-end updater acceptance remain
 [homelab #351](https://github.com/lutzseverino/homelab/issues/351).
 Source checks and unsigned CI bundles do not satisfy that gate. Publication
 requires its separate operational approval. Component guides retain the release
-procedures: [manager](../../manager/docs/how-to/publish-a-release.md) and
-[publisher](../../publisher/docs/how-to/publish-a-release.md).
+procedures: [manager](../../manager/docs/development/how-to/publish-a-release.md) and
+[publisher](../../publisher/docs/development/how-to/publish-a-release.md).

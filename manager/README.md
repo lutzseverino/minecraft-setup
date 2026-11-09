@@ -57,14 +57,11 @@ Server-specific manifests belong in server-owned infrastructure, not this app.
 
 ## Development
 
-Install Node.js 24, npm 11.6.2, stable Rust, and the Tauri prerequisites, then:
+From `manager/`, use the [shared setup and validation](../docs/development/README.md),
+then run `npm run tauri:dev` for the desktop app or `npm run dev` for browser mode.
+Application settings live in [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json).
 
-```bash
-npm ci
-npm run tauri:dev
-```
-
-See [run the manager locally](docs/how-to/run-locally.md) for browser mode and
+See [run the manager locally](docs/development/how-to/run-locally.md) for browser mode and
 verification. `npm run check` is the canonical frontend and tooling gate. CI
 also checks Rust formatting, tests, strict Clippy, and native bundles across the
 supported operating systems.
