@@ -1,62 +1,45 @@
 <div align="center">
-  <h1>Minecraft Setup Protocol</h1>
-  <p>The language-neutral contract between Minecraft setup publishers and client setup managers.</p>
+  <h1>Minecraft Setup</h1>
+  <p>A desktop app and Paper plugin that help players prepare a Minecraft client for a server.</p>
 
   [![Node.js 24](https://img.shields.io/badge/Node.js-24-339933)](https://nodejs.org/)
-  [![JavaScript](https://img.shields.io/badge/JavaScript-reference-F7DF1E)](src)
-  [![CI](https://github.com/lutzseverino/minecraft-setup-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup-protocol/actions/workflows/ci.yml)
-  [![Releases](https://img.shields.io/github/v/release/lutzseverino/minecraft-setup-protocol?include_prereleases)](https://github.com/lutzseverino/minecraft-setup-protocol/releases)
+  [![Rust](https://img.shields.io/badge/Rust-stable-000000)](https://www.rust-lang.org/)
+  [![Java 21](https://img.shields.io/badge/Java-21-ED8B00)](https://adoptium.net/)
+  [![CI](https://github.com/lutzseverino/minecraft-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup/actions/workflows/ci.yml)
   [![License: MIT](https://img.shields.io/badge/license-MIT-2f3437)](LICENSE)
 </div>
 
-Minecraft Setup Protocol defines the declarative document a server publishes to
-describe its desired client setup. It is independently owned so a desktop app,
-Paper plugin, static generator, or another implementation can conform without
-depending on another product's internal models.
+Minecraft Setup connects a server's declarative setup requirements with a player's
+isolated local game directory. The server supplies data; the desktop app reviews
+and applies the requested changes.
 
-The protocol never carries commands or scripts. A manifest may describe a
-Minecraft version, loader, setup profiles, managed resources, launcher display
-names, and a multiplayer server entry. The client remains responsible for how
-those requests are reviewed and safely applied.
+## Installation
 
-## Protocol V1
+Get native desktop installers or the Paper plugin JAR from the
+[component releases](https://github.com/lutzseverino/minecraft-setup/releases).
+[Historical desktop installers](https://github.com/lutzseverino/minecraft-setup-manager/releases)
+and [historical plugin JARs](https://github.com/lutzseverino/minecraft-setup-publisher/releases)
+remain available in their original repositories. Assets are not republished.
+The desktop app needs an installed Minecraft Launcher. Put the plugin JAR in
+Paper's `plugins` directory and restart the server.
 
-Version 1 is defined by these normative artifacts:
+The current desktop and plugin versions are development prereleases. Native
+installers are not yet notarized or signed by a recognized publisher; updater
+signatures remain a separate verification mechanism.
 
-| Artifact | Purpose |
-| --- | --- |
-| [`schema/v1/manifest.schema.json`](schema/v1/manifest.schema.json) | Structural JSON Schema 2020-12 contract |
-| [`schema/v1/attestation-request.schema.json`](schema/v1/attestation-request.schema.json) | Setup attestation request contract |
-| [`schema/v1/attestation-response.schema.json`](schema/v1/attestation-response.schema.json) | Successful attestation response contract |
-| [`schema/v1/problem.schema.json`](schema/v1/problem.schema.json) | Machine-readable protocol error contract |
-| [`spec/v1/manifest.md`](spec/v1/manifest.md) | Semantic validation and resource behavior |
-| [`spec/v1/canonicalization.md`](spec/v1/canonicalization.md) | Normalization and stable fingerprints |
-| [`spec/v1/http.md`](spec/v1/http.md) | Discovery and publication over HTTPS |
-| [`spec/v1/attestation.md`](spec/v1/attestation.md) | Optional setup challenge and attestation exchange |
+## Features
 
-The fixtures under [`fixtures/v1`](fixtures/v1) are executable conformance
-examples. Their catalog records whether each document is valid, the expected
-error code for invalid documents, and golden fingerprints for valid documents.
+- Define language-neutral setup requirements in [protocol](protocol/README.md).
+- Review and apply client setup with [manager](manager/README.md).
+- Publish and optionally enforce requirements with [publisher](publisher/README.md).
+- Release each component independently with its own version and toolchain.
 
-## Implementations
+## Usage
 
-A conforming producer must validate the final manifest bytes before publishing
-them. It should generate immutable, hash-pinned resources rather than resolving
-moving versions for every client request.
-
-A conforming consumer must perform both schema and semantic validation before
-saving, previewing, or applying a manifest. Accepting a document does not mean a
-consumer must support every requested setup action; unsupported work must fail
-closed rather than produce a partial successful setup.
-
-The JavaScript modules in [`src`](src) are a reference validator and
-canonicalizer for this repository's fixtures. They are not a runtime dependency
-or privileged implementation of the protocol.
-
-The optional attestation exchange lets a server ask a player to run the setup
-manager before joining. It is a workflow signal, not remote proof that the
-player's files remain unchanged. Servers needing a trusted client handshake
-must use a separately reviewed client component.
+Enter a Minecraft server address in the manager, review its requested setup,
+and approve the plan. Server operators can follow the publisher's
+[first setup tutorial](publisher/docs/tutorials/publish-your-first-setup.md).
+Keep its login gate off until discovery and attestation are tested.
 
 ## Documentation
 

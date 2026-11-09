@@ -1,0 +1,47 @@
+name: Protocol release
+
+on:
+  push:
+    tags:
+      - "protocol-v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: protocol-release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate protocol release
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: protocol
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: protocol/package-lock.json
+      - run: npm install --global npm@11.6.2
+      - run: node ../scripts/release-version.mjs protocol "$GITHUB_REF_NAME"
+      - run: npm ci
+      - run: npm run check
+
+  publish:
+    name: Publish protocol release
+    needs: validate
+    environment: release
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Create independent protocol release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes \
+            --title "Minecraft Setup Protocol $GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY"

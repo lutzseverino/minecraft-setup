@@ -10,15 +10,12 @@
     "includes": [
       "README.md",
       "docs/**/*.md",
-      "fixtures/**/*.json",
       "package.json",
-      "schema/**/*.json",
-      "scripts/**/*.mjs",
-      "!scripts/validate.mjs",
-      "!scripts/validate-issue-contract.mjs",
-      "spec/**/*.md",
-      "src/**/*.mjs",
-      "test/**/*.mjs"
+      "scripts/check.mjs",
+      "scripts/release-version*.mjs",
+      "!manager",
+      "!publisher",
+      "!protocol"
     ]
   },
   "formatter": {

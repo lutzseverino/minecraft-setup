@@ -1,0 +1,282 @@
+{
+  "app": {
+    "title": "Minecraft Setup Manager",
+    "subtitle": "Gets Minecraft ready for the server."
+  },
+  "applicationUpdate": {
+    "title": "App updates",
+    "checking": "Checking for app updates...",
+    "current": "This app is up to date.",
+    "checkAgain": "Check again",
+    "compactAvailable": "App update v{{version}} is available.",
+    "compactError": "The app update check did not finish.",
+    "review": "Review",
+    "availableTitle": "App update available",
+    "availableDetail": "A newer application build is ready to review.",
+    "consent": "Update from {{currentVersion}} to {{version}}? The app will download and install the update, then close and reopen.",
+    "signatureTrust": "The application verifies the update with its embedded updater key before installation. This is separate from operating-system publisher signing, so a system trust warning may still appear.",
+    "setupBusy": "Finish the current setup operation before updating the app.",
+    "releaseNotes": "Release notes",
+    "later": "Later",
+    "updateAndRestart": "Update and restart",
+    "updatingTitle": "Updating the app",
+    "downloading": "Downloading the signed update...",
+    "downloadProgress": "Application update download progress",
+    "preparingDownload": "Preparing download",
+    "downloaded": "{{downloaded}} downloaded",
+    "downloadedOf": "{{downloaded}} of {{total}}",
+    "installing": "The download is complete. Verifying and installing the update...",
+    "restarting": "The update is installed. Reopening the application...",
+    "readyTitle": "Update installed",
+    "readyDetail": "The update is installed, but the application could not reopen automatically.",
+    "restartNow": "Restart now",
+    "errorTitle": "App update problem",
+    "errorDetail": "The update did not complete or could not be confirmed. You can keep using the application and try again.",
+    "dismiss": "Dismiss",
+    "tryAgain": "Try again"
+  },
+  "common": {
+    "continue": "Continue",
+    "done": "Done"
+  },
+  "status": {
+    "pending": "Waiting",
+    "working": "Working",
+    "ready": "Ready",
+    "review": "Check",
+    "blocked": "Problem",
+    "info": "Info"
+  },
+  "steps": {
+    "ariaLabel": "Setup progress",
+    "server": "Server",
+    "launcher": "Launcher",
+    "profile": "Speed",
+    "install": "Steps",
+    "validate": "Check",
+    "done": "Done"
+  },
+  "launchers": {
+    "official": {
+      "label": "Minecraft Launcher",
+      "detail": "Best choice if you use the normal Minecraft app."
+    },
+    "sklauncher": {
+      "label": "SKlauncher",
+      "detail": "Use this if you play through SKlauncher."
+    },
+    "manual": {
+      "label": "Manual setup",
+      "detail": "Use this if your launcher is different."
+    }
+  },
+  "profiles": {
+    "lowEnd": {
+      "label": "Low power",
+      "detail": "For older laptops or weak graphics."
+    },
+    "balanced": {
+      "label": "Recommended",
+      "detail": "Good for most players."
+    },
+    "shaders": {
+      "label": "Shaders",
+      "detail": "For stronger PCs that can handle nicer lighting."
+    },
+    "dynamic": {
+      "light": "Uses fewer extras for slower computers.",
+      "standard": "A good choice for most computers.",
+      "shaders": "Includes extra visual effects for stronger computers."
+    }
+  },
+  "server": {
+    "eyebrow": "Server",
+    "title": "Choose a server.",
+    "lead": "Enter the server address. The app gets the setup list from that server and shows what it wants to add or update.",
+    "addTitle": "Add a server",
+    "addressLabel": "Server address",
+    "addressPlaceholder": "play.example.com",
+    "help": "Use the address players type in Minecraft. The app looks for the setup list from there.",
+    "codeLabel": "Setup code (optional)",
+    "codePlaceholder": "0123-4567-89AB-CDEF",
+    "codeHelp": "Only enter this if Minecraft showed you a setup code when you tried to join.",
+    "fetch": "Get setup list",
+    "checking": "Checking",
+    "continue": "Continue",
+    "errorLabel": "Could not get setup list",
+    "savedTitle": "Saved servers",
+    "emptySaved": "Saved servers will appear here after you add one.",
+    "unknownName": "This server",
+    "resolved": {
+      "detail": "Setup version {{version}} for Minecraft {{minecraft}}."
+    },
+    "status": {
+      "newSetup": "New setup",
+      "upToDate": "Up to date",
+      "updateAvailable": "Update"
+    }
+  },
+  "launcher": {
+    "eyebrow": "Launcher",
+    "title": "Choose your launcher.",
+    "lead": "Pick the app you use to open Minecraft. This version works with the normal Minecraft Launcher.",
+    "scanAgain": "Scan again",
+    "errorLabel": "Could not check launchers",
+    "cardTitle": "Launchers",
+    "unavailable": "Not found on this computer.",
+    "notSupported": "Support for this launcher is coming later.",
+    "status": {
+      "found": "Found",
+      "notFound": "Not found",
+      "notSupported": "Not ready yet",
+      "scanning": "Scanning"
+    }
+  },
+  "profile": {
+    "eyebrow": "Speed",
+    "title": "Choose how Minecraft should run.",
+    "lead": "Pick the option that matches your computer. The setup file saves the right mod list either way.",
+    "continue": "Show steps",
+    "building": "Preparing steps",
+    "errorLabel": "Could not prepare the steps",
+    "missingSelection": "Choose a setup option before continuing.",
+    "memory": "{{memory}} MB RAM",
+    "serverCardTitle": "Server setup",
+    "manifestVersion": "Setup version {{version}}"
+  },
+  "install": {
+    "eyebrow": "Steps",
+    "title": "Review the setup steps.",
+    "lead": "This checks Fabric, creates the clean game folder, and adds a launcher profile.",
+    "run": "Set up",
+    "running": "Setting up",
+    "check": "Check setup",
+    "checking": "Checking setup",
+    "cardTitle": "Setup steps",
+    "emptyLog": "[waiting] Ready to create the local setup.",
+    "failedLog": "[problem] {{message}}",
+    "unsupported": {
+      "label": "This setup needs a newer app",
+      "detail": "Some requested steps are not available yet. Nothing will be changed until every step can be completed safely."
+    },
+    "actionStatus": {
+      "add": "Add",
+      "update": "Update",
+      "remove": "Remove",
+      "verify": "Check",
+      "notImplemented": "Not available yet"
+    },
+    "targets": {
+      "mods": "mods",
+      "resourcepacks": "resource packs",
+      "shaderpacks": "shader packs",
+      "config": "config files"
+    },
+    "resourceSource": {
+      "direct": "From {{host}}. Checked with {{hash}} before it is used.",
+      "modrinth": "From Modrinth project {{project}}, version {{version}}. The download is checked before it is used."
+    },
+    "actions": {
+      "verify_loader": {
+        "label": "Check Minecraft version",
+        "detail": "Make sure the right loader is available."
+      },
+      "install_loader": {
+        "label": "Install Fabric",
+        "detail": "Add Fabric if this server needs it."
+      },
+      "ensure_game_directory": {
+        "label": "Make a clean game folder",
+        "detail": "Use a separate folder named {{subject}}."
+      },
+      "ensure_launcher_profile": {
+        "label": "Add the launcher profile",
+        "detail": "Create or update {{subject}} in your launcher."
+      },
+      "sync_resource": {
+        "label": "Add {{subject}}",
+        "detail": "Download or update it in {{target}}."
+      },
+      "remove_resource": {
+        "label": "Remove {{subject}}",
+        "detail": "Remove this managed file from {{target}}."
+      },
+      "write_server_entry": {
+        "label": "Add the server",
+        "detail": "Add {{subject}} to Minecraft's server list."
+      },
+      "write_setup_receipt": {
+        "label": "Save the setup record",
+        "detail": "Remember this setup so updates can be checked later."
+      },
+      "validate_setup": {
+        "label": "Check everything",
+        "detail": "Check the local files and launcher profile."
+      }
+    }
+  },
+  "progressLog": {
+    "title": "Log"
+  },
+  "diagnostics": {
+    "eyebrow": "Check",
+    "title": "Check the setup.",
+    "lead": "These checks look at the local setup files.",
+    "checks": {
+      "local_setup": {
+        "label": "Local setup",
+        "detail": "Could not check the setup: {{message}}"
+      },
+      "manifest": {
+        "label": "Setup list loaded",
+        "detail": "Minecraft, Fabric, server, and mod choices are ready."
+      },
+      "loader_version": {
+        "label": "Minecraft version",
+        "detail": "The Minecraft version and loader are installed."
+      },
+      "game_directory": {
+        "label": "Separate game folder",
+        "detail": "The game folder is ready."
+      },
+      "launcher_profile": {
+        "label": "Launcher profile",
+        "detail": "Launcher profile is ready."
+      },
+      "mods_directory": {
+        "label": "Mods folder",
+        "detail": "The mods folder is ready."
+      },
+      "managed_resources": {
+        "label": "Setup files",
+        "detail": "The requested files match their expected versions."
+      },
+      "setup_receipt": {
+        "label": "Setup file",
+        "detail": "The setup file is saved."
+      },
+      "server_entry": {
+        "label": "Saved server",
+        "detail": "The server is in Minecraft's server list."
+      },
+      "setup_attestation": {
+        "label": "Server check-in",
+        "detail": "The server knows this setup is ready.",
+        "failed": "The local setup is ready, but the server did not accept the code: {{message}}"
+      }
+    }
+  },
+  "done": {
+    "eyebrow": "Done",
+    "title": "Local setup is ready.",
+    "lead": "The clean game folder and setup file are ready on this computer.",
+    "export": "Export report",
+    "startOver": "Start over",
+    "summary": {
+      "label": "Flow complete",
+      "detail": "Choice: {{profile}} · Launcher: {{launcher}}"
+    },
+    "reportTitle": "Report",
+    "reportFailed": "Could not export the report: {{message}}"
+  }
+}

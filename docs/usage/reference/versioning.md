@@ -1,6 +1,6 @@
 # Versioning
 
-This repository follows Semantic Versioning because producers and consumers
+The protocol follows Semantic Versioning because producers and consumers
 depend on its compatibility mechanically.
 
 `schemaVersion` is the incompatible wire-contract major. A consumer that does

@@ -1,0 +1,282 @@
+{
+  "app": {
+    "title": "Minecraft Setup Manager",
+    "subtitle": "Prepara Minecraft para el servidor."
+  },
+  "applicationUpdate": {
+    "title": "Actualizaciones de la app",
+    "checking": "Buscando actualizaciones de la app...",
+    "current": "La app está al día.",
+    "checkAgain": "Buscar de nuevo",
+    "compactAvailable": "La actualización v{{version}} está disponible.",
+    "compactError": "No se terminó de buscar actualizaciones.",
+    "review": "Revisar",
+    "availableTitle": "Actualización disponible",
+    "availableDetail": "Hay una versión nueva de la aplicación para revisar.",
+    "consent": "¿Actualizar de {{currentVersion}} a {{version}}? La app descargará e instalará la actualización, y después se cerrará y volverá a abrir.",
+    "signatureTrust": "La aplicación verifica la actualización con su clave integrada antes de instalarla. Esto es independiente de la firma de editor del sistema operativo, por lo que todavía puede aparecer un aviso de confianza.",
+    "setupBusy": "Termina la operación de configuración actual antes de actualizar la app.",
+    "releaseNotes": "Notas de la versión",
+    "later": "Más tarde",
+    "updateAndRestart": "Actualizar y reiniciar",
+    "updatingTitle": "Actualizando la app",
+    "downloading": "Descargando la actualización firmada...",
+    "downloadProgress": "Progreso de descarga de la actualización",
+    "preparingDownload": "Preparando la descarga",
+    "downloaded": "{{downloaded}} descargados",
+    "downloadedOf": "{{downloaded}} de {{total}}",
+    "installing": "La descarga ha terminado. Verificando e instalando la actualización...",
+    "restarting": "La actualización está instalada. Volviendo a abrir la aplicación...",
+    "readyTitle": "Actualización instalada",
+    "readyDetail": "La actualización está instalada, pero la aplicación no se pudo volver a abrir automáticamente.",
+    "restartNow": "Reiniciar ahora",
+    "errorTitle": "Problema con la actualización",
+    "errorDetail": "La actualización no terminó o no se pudo confirmar. Puedes seguir usando la aplicación e intentarlo de nuevo.",
+    "dismiss": "Cerrar",
+    "tryAgain": "Intentar de nuevo"
+  },
+  "common": {
+    "continue": "Continuar",
+    "done": "Hecho"
+  },
+  "status": {
+    "pending": "En espera",
+    "working": "Trabajando",
+    "ready": "Listo",
+    "review": "Revisar",
+    "blocked": "Problema",
+    "info": "Info"
+  },
+  "steps": {
+    "ariaLabel": "Progreso de la configuracion",
+    "server": "Servidor",
+    "launcher": "Launcher",
+    "profile": "Rendimiento",
+    "install": "Pasos",
+    "validate": "Revisar",
+    "done": "Hecho"
+  },
+  "launchers": {
+    "official": {
+      "label": "Minecraft Launcher",
+      "detail": "La mejor opcion si usas la app normal de Minecraft."
+    },
+    "sklauncher": {
+      "label": "SKlauncher",
+      "detail": "Usa esto si juegas con SKlauncher."
+    },
+    "manual": {
+      "label": "Manual",
+      "detail": "Usa esto si tu launcher es distinto."
+    }
+  },
+  "profiles": {
+    "lowEnd": {
+      "label": "PC sencillo",
+      "detail": "Para portatiles antiguos o graficos justos."
+    },
+    "balanced": {
+      "label": "Recomendado",
+      "detail": "Buena opcion para casi todos."
+    },
+    "shaders": {
+      "label": "Shaders",
+      "detail": "Para PCs potentes con mejor iluminacion."
+    },
+    "dynamic": {
+      "light": "Usa menos extras para ordenadores mas lentos.",
+      "standard": "Una buena opcion para la mayoria de ordenadores.",
+      "shaders": "Incluye efectos visuales extra para ordenadores mas potentes."
+    }
+  },
+  "server": {
+    "eyebrow": "Servidor",
+    "title": "Elige un servidor.",
+    "lead": "Escribe la direccion del servidor. La app obtiene la lista de configuracion de ese servidor y muestra lo que quiere anadir o actualizar.",
+    "addTitle": "Anadir un servidor",
+    "addressLabel": "Direccion del servidor",
+    "addressPlaceholder": "play.example.com",
+    "help": "Usa la direccion que los jugadores escriben en Minecraft. La app busca la lista de configuracion desde ahi.",
+    "codeLabel": "Codigo de configuracion (opcional)",
+    "codePlaceholder": "0123-4567-89AB-CDEF",
+    "codeHelp": "Escribelo solo si Minecraft mostro un codigo al intentar entrar.",
+    "fetch": "Obtener lista",
+    "checking": "Revisando",
+    "continue": "Continuar",
+    "errorLabel": "No se pudo obtener la lista",
+    "savedTitle": "Servidores guardados",
+    "emptySaved": "Los servidores guardados apareceran aqui despues de anadir uno.",
+    "unknownName": "Este servidor",
+    "resolved": {
+      "detail": "Version de configuracion {{version}} para Minecraft {{minecraft}}."
+    },
+    "status": {
+      "newSetup": "Nueva",
+      "upToDate": "Al dia",
+      "updateAvailable": "Actualizar"
+    }
+  },
+  "launcher": {
+    "eyebrow": "Launcher",
+    "title": "Elige tu launcher.",
+    "lead": "Elige la app con la que abres Minecraft. Esta version funciona con el Minecraft Launcher normal.",
+    "scanAgain": "Buscar otra vez",
+    "errorLabel": "No se pudieron revisar los launchers",
+    "cardTitle": "Launchers",
+    "unavailable": "No se ha encontrado en este ordenador.",
+    "notSupported": "Este launcher estara disponible mas adelante.",
+    "status": {
+      "found": "Encontrado",
+      "notFound": "No encontrado",
+      "notSupported": "Aun no disponible",
+      "scanning": "Buscando"
+    }
+  },
+  "profile": {
+    "eyebrow": "Rendimiento",
+    "title": "Elige como debe ir Minecraft.",
+    "lead": "Elige la opcion que encaje con tu ordenador. El archivo de configuracion guarda la lista correcta de mods.",
+    "continue": "Ver pasos",
+    "building": "Preparando pasos",
+    "errorLabel": "No se pudieron preparar los pasos",
+    "missingSelection": "Elige una opcion antes de continuar.",
+    "memory": "{{memory}} MB RAM",
+    "serverCardTitle": "Configuracion del servidor",
+    "manifestVersion": "Version de configuracion {{version}}"
+  },
+  "install": {
+    "eyebrow": "Pasos",
+    "title": "Revisa los pasos.",
+    "lead": "Esto revisa Fabric, crea una carpeta limpia y anade un perfil del launcher.",
+    "run": "Configurar",
+    "running": "Configurando",
+    "check": "Revisar",
+    "checking": "Revisando",
+    "cardTitle": "Pasos",
+    "emptyLog": "[esperando] Listo para crear la configuracion local.",
+    "failedLog": "[problema] {{message}}",
+    "unsupported": {
+      "label": "Esta configuracion necesita una app mas nueva",
+      "detail": "Algunos pasos todavia no estan disponibles. No se cambiara nada hasta que todos los pasos se puedan completar de forma segura."
+    },
+    "actionStatus": {
+      "add": "Anadir",
+      "update": "Actualizar",
+      "remove": "Quitar",
+      "verify": "Revisar",
+      "notImplemented": "Todavia no disponible"
+    },
+    "targets": {
+      "mods": "mods",
+      "resourcepacks": "paquetes de recursos",
+      "shaderpacks": "shaders",
+      "config": "archivos de configuracion"
+    },
+    "resourceSource": {
+      "direct": "Viene de {{host}}. Se comprueba con {{hash}} antes de usarlo.",
+      "modrinth": "Viene del proyecto {{project}} de Modrinth, version {{version}}. Se comprueba antes de usarlo."
+    },
+    "actions": {
+      "verify_loader": {
+        "label": "Revisar la version de Minecraft",
+        "detail": "Comprueba que el loader correcto esta disponible."
+      },
+      "install_loader": {
+        "label": "Instalar Fabric",
+        "detail": "Anade Fabric si este servidor lo necesita."
+      },
+      "ensure_game_directory": {
+        "label": "Crear una carpeta limpia",
+        "detail": "Usa una carpeta separada llamada {{subject}}."
+      },
+      "ensure_launcher_profile": {
+        "label": "Anadir el perfil del launcher",
+        "detail": "Crea o actualiza {{subject}} en tu launcher."
+      },
+      "sync_resource": {
+        "label": "Anadir {{subject}}",
+        "detail": "Lo descarga o actualiza en {{target}}."
+      },
+      "remove_resource": {
+        "label": "Quitar {{subject}}",
+        "detail": "Quita este archivo gestionado de {{target}}."
+      },
+      "write_server_entry": {
+        "label": "Anadir el servidor",
+        "detail": "Anade {{subject}} a la lista de servidores de Minecraft."
+      },
+      "write_setup_receipt": {
+        "label": "Guardar el registro",
+        "detail": "Recuerda esta configuracion para revisar actualizaciones despues."
+      },
+      "validate_setup": {
+        "label": "Revisarlo todo",
+        "detail": "Revisa los archivos locales y el perfil del launcher."
+      }
+    }
+  },
+  "progressLog": {
+    "title": "Registro"
+  },
+  "diagnostics": {
+    "eyebrow": "Revision",
+    "title": "Revisa la configuracion.",
+    "lead": "Estas revisiones miran los archivos locales de configuracion.",
+    "checks": {
+      "local_setup": {
+        "label": "Configuracion local",
+        "detail": "No se pudo revisar la configuracion: {{message}}"
+      },
+      "manifest": {
+        "label": "Lista cargada",
+        "detail": "Minecraft, Fabric, servidor y mods estan preparados."
+      },
+      "loader_version": {
+        "label": "Version de Minecraft",
+        "detail": "La version de Minecraft y el loader estan instalados."
+      },
+      "game_directory": {
+        "label": "Carpeta separada",
+        "detail": "La carpeta de juego esta lista."
+      },
+      "launcher_profile": {
+        "label": "Perfil del launcher",
+        "detail": "El perfil del launcher esta listo."
+      },
+      "mods_directory": {
+        "label": "Carpeta de mods",
+        "detail": "La carpeta de mods esta lista."
+      },
+      "managed_resources": {
+        "label": "Archivos de configuracion",
+        "detail": "Los archivos pedidos coinciden con sus versiones esperadas."
+      },
+      "setup_receipt": {
+        "label": "Archivo de configuracion",
+        "detail": "El archivo de configuracion esta guardado."
+      },
+      "server_entry": {
+        "label": "Servidor guardado",
+        "detail": "El servidor esta en la lista de servidores de Minecraft."
+      },
+      "setup_attestation": {
+        "label": "Aviso al servidor",
+        "detail": "El servidor sabe que esta configuracion esta lista.",
+        "failed": "La configuracion local esta lista, pero el servidor no acepto el codigo: {{message}}"
+      }
+    }
+  },
+  "done": {
+    "eyebrow": "Hecho",
+    "title": "La configuracion local esta lista.",
+    "lead": "La carpeta limpia y el archivo de configuracion estan listos en este ordenador.",
+    "export": "Exportar informe",
+    "startOver": "Empezar de nuevo",
+    "summary": {
+      "label": "Flujo completado",
+      "detail": "Opcion: {{profile}} · Launcher: {{launcher}}"
+    },
+    "reportTitle": "Informe",
+    "reportFailed": "No se pudo exportar el informe: {{message}}"
+  }
+}

@@ -1,24 +1,19 @@
 {
-  "name": "minecraft-setup-protocol",
+  "name": "minecraft-setup",
   "private": true,
-  "version": "1.1.1",
-  "packageManager": "npm@11.6.2",
   "type": "module",
-  "scripts": {
-    "check": "npm run lint && npm test && npm run validate",
-    "format": "biome check . --write",
-    "lint": "biome check .",
-    "test": "node --test",
-    "validate": "node scripts/validate-fixtures.mjs"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.5.1",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1",
-    "canonicalize": "^3.0.0"
-  },
+  "packageManager": "npm@11.6.2",
   "engines": {
     "node": ">=24"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "check:node": "npm run lint && node --test scripts/release-version.test.mjs && npm --prefix protocol run check && npm --prefix manager run check",
+    "check:protocol": "node scripts/check.mjs protocol",
+    "check:manager": "node scripts/check.mjs manager",
+    "check:publisher": "node scripts/check.mjs publisher",
+    "test": "node --test scripts/release-version.test.mjs",
+    "lint": "node protocol/node_modules/@biomejs/biome/bin/biome check ."
+  }
 }

@@ -1,0 +1,127 @@
+name: Publisher release
+
+on:
+  push:
+    tags:
+      - "publisher-v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publisher-release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    defaults:
+      run:
+        working-directory: publisher
+    name: Verify and publish plugin
+    environment: release
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Install Java
+        uses: actions/setup-java@03ad4de0992f5dab5e18fcb136590ce7c4a0ac95 # v5.6.0
+        with:
+          cache: maven
+          cache-dependency-path: publisher/pom.xml
+          distribution: temurin
+          java-version: 21
+
+      - name: Install Node.js for release routing
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Validate release version
+        id: version
+        run: node ../scripts/release-version.mjs publisher "$GITHUB_REF_NAME"
+
+      - name: Verify publisher
+        run: ./mvnw --batch-mode --no-transfer-progress verify
+
+      - name: Prepare release assets
+        id: assets
+        shell: bash
+        env:
+          VERSION: ${{ steps.version.outputs.number }}
+        run: |
+          set -euo pipefail
+          jar_name="MinecraftSetupPublisher-${VERSION}.jar"
+          jar_path="target/${jar_name}"
+          test -s "$jar_path"
+          (
+            cd target
+            sha256sum "$jar_name" > "${jar_name}.sha256"
+          )
+          echo "jar=$jar_path" >> "$GITHUB_OUTPUT"
+          echo "jar_name=$jar_name" >> "$GITHUB_OUTPUT"
+          echo "checksum=${jar_path}.sha256" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JAR: ${{ steps.assets.outputs.jar }}
+          CHECKSUM: ${{ steps.assets.outputs.checksum }}
+          PRERELEASE: ${{ steps.version.outputs.prerelease }}
+          VERSION: ${{ steps.version.outputs.number }}
+        run: |
+          set -euo pipefail
+          tag="$GITHUB_REF_NAME"
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            draft="$(gh release view "$tag" --json isDraft --jq .isDraft --repo "$GITHUB_REPOSITORY")"
+            if [[ "$draft" != "true" ]]; then
+              echo "Release $tag is already public; refusing to replace its assets" >&2
+              exit 1
+            fi
+            gh release upload "$tag" "$JAR" "$CHECKSUM" --clobber --repo "$GITHUB_REPOSITORY"
+          else
+            args=(
+              "$tag"
+              "$JAR"
+              "$CHECKSUM"
+              --draft
+              --generate-notes
+              --title "Minecraft Setup Publisher $tag"
+              --verify-tag
+              --repo "$GITHUB_REPOSITORY"
+            )
+            if [[ "$PRERELEASE" == "true" ]]; then
+              args+=(--prerelease)
+            fi
+            gh release create "${args[@]}"
+          fi
+
+      - name: Validate and publish release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JAR_NAME: ${{ steps.assets.outputs.jar_name }}
+          PRERELEASE: ${{ steps.version.outputs.prerelease }}
+        run: |
+          set -euo pipefail
+          tag="$GITHUB_REF_NAME"
+          expected="$(printf '%s\n%s\n' "$JAR_NAME" "${JAR_NAME}.sha256" | sort)"
+          actual="$(gh release view "$tag" --json assets --jq '.assets[].name' \
+            --repo "$GITHUB_REPOSITORY" | sort)"
+          if [[ "$actual" != "$expected" ]]; then
+            echo "Draft release assets differ from the expected JAR and checksum" >&2
+            diff <(printf '%s\n' "$expected") <(printf '%s\n' "$actual") || true
+            exit 1
+          fi
+
+          actual_prerelease="$(gh release view "$tag" --json isPrerelease --jq .isPrerelease \
+            --repo "$GITHUB_REPOSITORY")"
+          if [[ "$actual_prerelease" != "$PRERELEASE" ]]; then
+            echo "Draft prerelease state $actual_prerelease does not match expected $PRERELEASE" >&2
+            exit 1
+          fi
+          gh release edit "$tag" --draft=false --verify-tag --repo "$GITHUB_REPOSITORY"

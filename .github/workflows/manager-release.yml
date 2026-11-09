@@ -1,0 +1,212 @@
+name: Manager release
+
+on:
+  push:
+    tags:
+      - "manager-v*"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    defaults:
+      run:
+        working-directory: manager
+    name: Validate release
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Install Linux desktop dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - name: Install Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          cache: npm
+          cache-dependency-path: manager/package-lock.json
+          node-version: 24
+
+      - name: Install pinned npm
+        run: npm install --global npm@11.6.2
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@4be7066ada62dd38de10e7b70166bc74ed198c30 # stable
+        with:
+          components: clippy,rustfmt
+
+      - name: Cache Rust build artifacts
+        uses: swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          workspaces: manager/src-tauri
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Check frontend and tooling
+        run: npm run check
+
+      - name: Validate component release tag
+        run: node ../scripts/release-version.mjs manager "$GITHUB_REF_NAME"
+
+      - name: Check updater release configuration
+        run: npm run check:updater-config:release
+
+      - name: Check Rust formatting
+        run: cargo fmt --manifest-path src-tauri/Cargo.toml --all -- --check
+
+      - name: Test Rust backend
+        run: cargo test --manifest-path src-tauri/Cargo.toml --all-targets --all-features
+
+      - name: Lint Rust backend
+        run: cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets --all-features -- -D warnings
+
+  publish:
+    defaults:
+      run:
+        working-directory: manager
+    name: Bundle ${{ matrix.name }}
+    needs: validate
+    environment: release
+    permissions:
+      contents: write
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: macOS Apple Silicon
+            os: macos-15
+            rust_target: aarch64-apple-darwin
+            args: --target aarch64-apple-darwin --bundles app,dmg
+          - name: macOS Intel
+            os: macos-15-intel
+            rust_target: x86_64-apple-darwin
+            args: --target x86_64-apple-darwin --bundles app,dmg
+          - name: Linux x64
+            os: ubuntu-22.04
+            rust_target: x86_64-unknown-linux-gnu
+            args: --target x86_64-unknown-linux-gnu --bundles appimage,deb
+          - name: Windows x64
+            os: windows-2022
+            rust_target: x86_64-pc-windows-msvc
+            args: --target x86_64-pc-windows-msvc --bundles nsis
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Install Linux desktop dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - name: Install Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          cache: npm
+          cache-dependency-path: manager/package-lock.json
+          node-version: 24
+
+      - name: Install pinned npm
+        run: npm install --global npm@11.6.2
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@4be7066ada62dd38de10e7b70166bc74ed198c30 # stable
+        with:
+          targets: ${{ matrix.rust_target }}
+
+      - name: Cache Rust build artifacts
+        uses: swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          workspaces: manager/src-tauri
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build and publish native bundle
+        uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
+        env:
+          APPLE_SIGNING_IDENTITY: ${{ startsWith(matrix.os, 'macos-') && '-' || '' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          VITE_APP_UPDATER_ENABLED: "true"
+        with:
+          projectPath: manager
+          args: ${{ matrix.args }} --config src-tauri/tauri.release.conf.json
+          generateReleaseNotes: true
+          prerelease: ${{ startsWith(github.ref_name, 'manager-v0.') }}
+          releaseBody: |
+            Native installers and application update artifacts for Minecraft Setup Manager.
+
+            > [!WARNING]
+            > Updater signatures let an installed copy verify future application updates. They do not replace Apple notarization, Apple Developer ID, or Windows publisher signing. These installers are not notarized or signed by a recognized publisher, so expect an operating-system security prompt.
+          releaseDraft: true
+          releaseName: Minecraft Setup Manager ${{ github.ref_name }}
+          retryAttempts: 2
+          tagName: ${{ github.ref_name }}
+          updaterJsonPreferNsis: true
+          uploadUpdaterJson: true
+          uploadUpdaterSignatures: true
+
+  finalize:
+    environment: release
+    defaults:
+      run:
+        working-directory: manager
+    name: Publish release
+    needs: publish
+    permissions:
+      contents: write
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          cache: npm
+          cache-dependency-path: manager/package-lock.json
+          node-version: 24
+
+      - name: Install pinned npm
+        run: npm install --global npm@11.6.2
+
+      - name: Install release validation dependencies
+        run: npm ci
+
+      - name: Download and validate updater metadata
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/update-release"
+          gh release download "$GITHUB_REF_NAME" --clobber --pattern latest.json --dir "$RUNNER_TEMP/update-release" --repo "$GITHUB_REPOSITORY"
+          gh release download "$GITHUB_REF_NAME" --clobber --pattern "*.sig" --dir "$RUNNER_TEMP/update-release" --repo "$GITHUB_REPOSITORY"
+          gh release download "$GITHUB_REF_NAME" --clobber --pattern "*.app.tar.gz" --dir "$RUNNER_TEMP/update-release" --repo "$GITHUB_REPOSITORY"
+          gh release download "$GITHUB_REF_NAME" --clobber --pattern "*.AppImage" --dir "$RUNNER_TEMP/update-release" --repo "$GITHUB_REPOSITORY"
+          gh release download "$GITHUB_REF_NAME" --clobber --pattern "*.deb" --dir "$RUNNER_TEMP/update-release" --repo "$GITHUB_REPOSITORY"
+          gh release download "$GITHUB_REF_NAME" --clobber --pattern "*-setup.exe" --dir "$RUNNER_TEMP/update-release" --repo "$GITHUB_REPOSITORY"
+          gh release view "$GITHUB_REF_NAME" --json assets,isDraft,isPrerelease,tagName --repo "$GITHUB_REPOSITORY" > "$RUNNER_TEMP/update-release/release.json"
+          node scripts/check-update-release.mjs "$RUNNER_TEMP/update-release/latest.json" "$RUNNER_TEMP/update-release/release.json" "$GITHUB_REF_NAME" "$RUNNER_TEMP/update-release" src-tauri/tauri.release.conf.json
+
+      - name: Publish completed release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft --repo "$GITHUB_REPOSITORY")" = "true" ]; then
+            gh release edit "$GITHUB_REF_NAME" --draft=false --verify-tag --repo "$GITHUB_REPOSITORY"
+          else
+            echo "Release $GITHUB_REF_NAME is already public; continuing channel promotion."
+          fi
+
+      - name: Promote application update channel
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/publish-update-channel.mjs "$RUNNER_TEMP/update-release/latest.json"
