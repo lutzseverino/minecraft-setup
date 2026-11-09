@@ -12,10 +12,9 @@ merge-commit exception. Ordinary later work uses the repository's normal method.
 
 The [preparation inventory](https://github.com/lutzseverino/homelab/issues/371#issuecomment-6739403902)
 is the immutable selected-head/ref mapping; the import PR and its handoff record
-the delivered head, checks and actual merge evidence. After merging, the merger
-must verify every selected source head is an ancestor of actual destination
-`main`, publish that evidence on #20 and for #21, and restore squash-only
-repository/ruleset settings. A branch-only ancestry check cannot close #20.
+the delivered head, checks and actual merge evidence. See the
+[import delivery record](https://github.com/lutzseverino/minecraft-setup/pull/22)
+for its merge exception and final ancestry proof.
 
 Retained protocol `refs/tags/v…` stay unchanged. Manager and publisher
 `refs/tags/v…` map to `refs/tags/manager-v…` and `refs/tags/publisher-v…`
@@ -25,13 +24,10 @@ PR pseudo-refs are inventory evidence, not imported destination branches.
 The original manager `update-channel` branch is retained in the source and in
 its namespaced history ref; it is not promoted to the new destination channel.
 
-## Follow-on ownership
+## Repository boundaries
 
-The orchestrator owns the issue-to-PR hold transfer, merge, actual-main ancestry
-proof, merge-policy restoration, and downstream sequencing. Retain the intake
-hold across failed gates. The combined standards/configuration image is
-[setup #21](https://github.com/lutzseverino/minecraft-setup/issues/21), after the
-import lands. Intake activation remains
-[homelab #350](https://github.com/lutzseverino/homelab/issues/350); issue transfers
-and source retirement remain
-[homelab #373](https://github.com/lutzseverino/homelab/issues/373).
+Shared contribution guidance and checks live at the retained root. Component
+versions, toolchains and published artifacts stay independently owned. The
+[architecture decision](../adr/0001-one-repository-per-project.md) records the
+repository grouping and operational boundaries; the import delivery record
+links its adoption and operational follow-ons.
