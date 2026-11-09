@@ -1,6 +1,6 @@
 # Versioning
 
-This repository follows
+The publisher follows
 [Romantic Versioning](https://romversioning.github.io/romver/), written as
 `PROJECT.MAJOR.MINOR`.
 
