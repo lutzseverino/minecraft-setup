@@ -35,7 +35,7 @@ Download the plugin JAR from the
 place it in the Paper server's `plugins` directory, and restart the server. The
 plugin targets Paper 1.20.1 or newer on Java 17 or newer.
 
-Follow [publish your first setup](docs/tutorials/publish-your-first-setup.md) to
+Follow [publish your first setup](docs/usage/tutorials/publish-your-first-setup.md) to
 write, validate, and expose the manifest. Keep the login gate off until public
 HTTPS discovery and attestation have both been tested.
 
@@ -79,7 +79,7 @@ MiniMessage; setup and update messages must retain the literal `{code}`
 placeholder. Enforcement additionally requires the loopback HTTP adapter, a
 sanitizing HTTPS reverse proxy, and trustworthy player UUIDs.
 
-See the [configuration reference](docs/reference/configuration.md) for every
+See the [configuration reference](docs/usage/reference/configuration.md) for every
 setting and its default.
 
 ## Commands
@@ -90,7 +90,7 @@ manifest before publishing it; publication is the operation that activates its
 new fingerprint for login decisions.
 
 See the
-[commands and permissions reference](docs/reference/commands-and-permissions.md)
+[commands and permissions reference](docs/usage/reference/commands-and-permissions.md)
 for command behavior and permission nodes.
 
 ## Game And Trust Boundaries
@@ -112,8 +112,8 @@ fail-closed behavior only with that operational tradeoff understood.
 
 ## Development
 
-The plugin targets Java 17 and Paper 1.20.1 or newer. Builds require JDK 21 so
-the pinned formatter can run while Maven emits Java 17-compatible bytecode.
+From `publisher/`, follow the [shared setup and validation](../docs/development/README.md).
+The build settings in [`pom.xml`](pom.xml) target Java 17 and Paper 1.20.1 or newer.
 
 ```bash
 ./mvnw verify
@@ -121,7 +121,7 @@ the pinned formatter can run while Maven emits Java 17-compatible bytecode.
 
 The packaged plugin is written to `target/MinecraftSetupPublisher-<version>.jar`.
 Tagged releases follow Romantic Versioning; see
-[publish a plugin release](docs/how-to/publish-a-release.md).
+[publish a plugin release](docs/development/how-to/publish-a-release.md).
 
 ## Documentation
 

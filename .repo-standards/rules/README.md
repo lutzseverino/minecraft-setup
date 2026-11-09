@@ -1,21 +1,19 @@
 # Installed rules
 
-These rules come from https://github.com/lutzseverino/repo-canon v0.23.1, profile factory.
-Repository Standards installs and verifies them; adopt again to change them.
+These rules come from https://github.com/lutzseverino/repo-canon v0.25.0, profile factory.
+Repo Standards installs and verifies them; adopt again to change them.
 Run `repo-standards rules <path>` to print the rules that cover a path.
 
+- [`comments`](comments.md) covers the whole repository.
 - [`documentation`](documentation.md) covers:
   - `docs/README.md`
-  - `docs/_templates/README.md`
-  - `docs/_templates/decision.template.md`
-  - `docs/_templates/explanation.template.md`
-  - `docs/_templates/how-to.template.md`
-  - `docs/_templates/index.template.md`
-  - `docs/_templates/reference.template.md`
-  - `docs/_templates/tutorial.template.md`
+  - `docs/adr/0001-one-repository-per-project.md`
+  - `docs/adr/README.md`
   - `docs/development/README.md`
+  - `docs/development/component-releases.md`
   - `docs/development/how-to/README.md`
   - `docs/development/how-to/run-conformance-suite.md`
+  - `docs/development/import-history.md`
   - `docs/development/templates/README.md`
   - `docs/development/templates/decision.template.md`
   - `docs/development/templates/explanation.template.md`
@@ -23,17 +21,81 @@ Run `repo-standards rules <path>` to print the rules that cover a path.
   - `docs/development/templates/index.template.md`
   - `docs/development/templates/reference.template.md`
   - `docs/development/templates/tutorial.template.md`
-  - `docs/explanation/README.md`
-  - `docs/explanation/protocol-design.md`
-  - `docs/how-to/README.md`
-  - `docs/how-to/run-conformance-suite.md`
-  - `docs/reference/README.md`
-  - `docs/reference/versioning.md`
+  - `docs/development/verify-agent-sandbox.sh`
   - `docs/usage/README.md`
   - `docs/usage/explanation/README.md`
   - `docs/usage/explanation/protocol-design.md`
   - `docs/usage/reference/README.md`
   - `docs/usage/reference/versioning.md`
+  - `manager/docs/README.md`
+  - `manager/docs/adr/README.md`
+  - `manager/docs/adr/signed-application-update-channel.md`
+  - `manager/docs/adr/verified-launcher-profile-formats.md`
+  - `manager/docs/decisions/README.md`
+  - `manager/docs/decisions/signed-application-update-channel.md`
+  - `manager/docs/decisions/verified-launcher-profile-formats.md`
+  - `manager/docs/development/README.md`
+  - `manager/docs/development/explanation/README.md`
+  - `manager/docs/development/explanation/architecture.md`
+  - `manager/docs/development/explanation/safety-model.md`
+  - `manager/docs/development/how-to/README.md`
+  - `manager/docs/development/how-to/publish-a-release.md`
+  - `manager/docs/development/how-to/run-locally.md`
+  - `manager/docs/development/how-to/validate-sklauncher.md`
+  - `manager/docs/explanation/README.md`
+  - `manager/docs/explanation/architecture.md`
+  - `manager/docs/explanation/safety-model.md`
+  - `manager/docs/how-to/README.md`
+  - `manager/docs/how-to/publish-a-release.md`
+  - `manager/docs/how-to/run-locally.md`
+  - `manager/docs/how-to/validate-sklauncher.md`
+  - `manager/docs/reference/README.md`
+  - `manager/docs/reference/application-updates.md`
+  - `manager/docs/reference/implementation-status.md`
+  - `manager/docs/reference/launcher-validation.md`
+  - `manager/docs/reference/manifest-integration.md`
+  - `manager/docs/reference/supported-capabilities.md`
+  - `manager/docs/reference/versioning.md`
+  - `manager/docs/usage/README.md`
+  - `manager/docs/usage/reference/README.md`
+  - `manager/docs/usage/reference/application-updates.md`
+  - `manager/docs/usage/reference/implementation-status.md`
+  - `manager/docs/usage/reference/launcher-validation.md`
+  - `manager/docs/usage/reference/manifest-integration.md`
+  - `manager/docs/usage/reference/supported-capabilities.md`
+  - `manager/docs/usage/reference/versioning.md`
+  - `publisher/docs/README.md`
+  - `publisher/docs/development/README.md`
+  - `publisher/docs/development/explanation/README.md`
+  - `publisher/docs/development/explanation/architecture.md`
+  - `publisher/docs/development/explanation/publication-model.md`
+  - `publisher/docs/development/explanation/setup-compliance.md`
+  - `publisher/docs/development/how-to/README.md`
+  - `publisher/docs/development/how-to/publish-a-release.md`
+  - `publisher/docs/explanation/README.md`
+  - `publisher/docs/explanation/architecture.md`
+  - `publisher/docs/explanation/publication-model.md`
+  - `publisher/docs/explanation/setup-compliance.md`
+  - `publisher/docs/how-to/README.md`
+  - `publisher/docs/how-to/configure-login-gate.md`
+  - `publisher/docs/how-to/configure-reverse-proxy.md`
+  - `publisher/docs/how-to/publish-a-release.md`
+  - `publisher/docs/reference/README.md`
+  - `publisher/docs/reference/commands-and-permissions.md`
+  - `publisher/docs/reference/configuration.md`
+  - `publisher/docs/reference/versioning.md`
+  - `publisher/docs/tutorials/README.md`
+  - `publisher/docs/tutorials/publish-your-first-setup.md`
+  - `publisher/docs/usage/README.md`
+  - `publisher/docs/usage/how-to/README.md`
+  - `publisher/docs/usage/how-to/configure-login-gate.md`
+  - `publisher/docs/usage/how-to/configure-reverse-proxy.md`
+  - `publisher/docs/usage/reference/README.md`
+  - `publisher/docs/usage/reference/commands-and-permissions.md`
+  - `publisher/docs/usage/reference/configuration.md`
+  - `publisher/docs/usage/reference/versioning.md`
+  - `publisher/docs/usage/tutorials/README.md`
+  - `publisher/docs/usage/tutorials/publish-your-first-setup.md`
 - [`factory-sandbox-image`](factory-sandbox-image.md) covers:
   - `.factory/Dockerfile`
 - [`factory-workflow`](factory-workflow.md) covers the whole repository.
@@ -43,7 +105,9 @@ Run `repo-standards rules <path>` to print the rules that cover a path.
 - [`project-agent-guidance`](project-agent-guidance.md) covers:
   - `docs/agents/project.md`
 - [`project-readmes`](project-readmes.md) covers:
-  - `spec/README.md`
+  - `manager/README.md`
+  - `protocol/README.md`
+  - `publisher/README.md`
 - [`repository-license`](repository-license.md) covers:
   - `LICENSE`
 - [`repository-readme`](repository-readme.md) covers:

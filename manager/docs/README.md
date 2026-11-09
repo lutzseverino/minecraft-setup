@@ -1,12 +1,7 @@
-# Manager documentation
+# Docs
 
-Maintained manager usage and development guidance.
+Maintained guidance for using and developing the desktop setup application.
 
-- [Decisions](decisions/README.md): manager decisions guidance.
-- [Explanation](explanation/README.md): manager explanation guidance.
-- [How-To](how-to/README.md): manager how-to guidance.
-- [Reference](reference/README.md): manager reference guidance.
-
-Use the [shared development guide](../../docs/development/README.md),
-[contribution guide](../../CONTRIBUTING.md), and
-[documentation templates](../../docs/development/templates/README.md).
+- [Architecture decisions](adr/README.md): consequential decisions and their rationale.
+- [Development](development/README.md): building, testing, architecture, and maintenance.
+- [Usage](usage/README.md): using, configuring, and integrating the manager.

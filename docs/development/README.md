@@ -41,10 +41,25 @@ Separate publisher and manager jobs run the component checks. Manager CI builds
 macOS Apple Silicon, macOS Intel, Linux x64 and Windows x64 bundles. Linux
 source validation alone does not establish native signed-release acceptance.
 
-The retained `.factory/Dockerfile` is the former protocol-only image. The
-combined standards/configuration/toolchain image is separate work in
-[setup #21](https://github.com/lutzseverino/minecraft-setup/issues/21).
-Do not use that existing image as evidence of combined sandbox readiness.
+The factory builds `.factory/Dockerfile` from stdin without a build context,
+then adds its agent layer. The combined image supplies Node.js 24/npm 11.6.2,
+JDK 21, stable Rust/rustfmt/Clippy and Linux Tauri prerequisites system-wide.
+Dependencies are installed in the fresh checkout at run time as `agent`.
+The Maven wrapper downloads its own Maven distribution.
+
+The root factory configuration uses version 3. Live factory delivery requires
+a Scriptorium v4 host that accepts it; source validation does not establish
+that host or signed native-release acceptance.
+
+On a Mac with Docker Desktop, verify a reviewed full head SHA with
+`bash docs/development/verify-agent-sandbox.sh <SHA>`. The procedure clones that
+exact revision into a fresh directory, builds both contextless image layers
+using the pinned released factory agent layer, then runs all canonical checks
+as its actual unprivileged `agent` user. It prints the image content digest,
+head, identity and per-check exit codes, and removes its checkout, container and
+image tags afterward. No provider credentials are needed.
+The factory layer is source-pinned for reproducibility; it is validation tooling,
+not evidence of live factory delivery.
 
 ## Index
 
@@ -52,3 +67,4 @@ Do not use that existing image as evidence of combined sandbox readiness.
 - [Document templates](templates/README.md): starting points for maintained documentation.
 - [Component releases](component-releases.md): independent tags, artifacts, and publication gates.
 - [Import history](import-history.md): preserved ancestry and historical reference handling.
+- [Agent sandbox verification](verify-agent-sandbox.sh): build the combined image and run canonical checks as its agent user.
