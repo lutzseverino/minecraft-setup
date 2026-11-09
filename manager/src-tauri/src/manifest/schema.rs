@@ -1,0 +1,122 @@
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct SetupManifest {
+    pub schema_version: u16,
+    pub manifest_version: String,
+    pub id: String,
+    pub display_name: String,
+    pub server: ManifestServer,
+    pub minecraft: ManifestMinecraft,
+    pub install: ManifestInstall,
+    pub profiles: Vec<ManifestPerformanceProfile>,
+    pub resources: Vec<ManifestResource>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub server_entry: Option<ManifestServerEntry>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestServer {
+    pub name: String,
+    pub address: String,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestMinecraft {
+    pub version: String,
+    pub loader: ManifestLoader,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestLoader {
+    pub kind: ManifestLoaderKind,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub version: Option<String>,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ManifestLoaderKind {
+    None,
+    Fabric,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestInstall {
+    pub game_directory_name: String,
+    pub launcher_profile_name: String,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestPerformanceProfile {
+    pub id: String,
+    pub label: String,
+    pub recommended_memory_mb: u32,
+    #[serde(default)]
+    pub includes_shaders: bool,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestResource {
+    pub id: String,
+    pub name: String,
+    pub resource_type: ManifestResourceType,
+    pub target: ManifestResourceTarget,
+    #[serde(default)]
+    pub required: bool,
+    #[serde(default)]
+    pub profiles: Vec<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub file_name: Option<String>,
+    pub source: ManifestResourceSource,
+    #[serde(default)]
+    pub hashes: ManifestResourceHashes,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ManifestResourceType {
+    Mod,
+    ResourcePack,
+    ShaderPack,
+    Config,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Deserialize, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ManifestResourceTarget {
+    Mods,
+    Resourcepacks,
+    Shaderpacks,
+    Config,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Deserialize, Serialize)]
+#[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
+pub enum ManifestResourceSource {
+    Modrinth { project: String, version: String },
+    Direct { url: String },
+}
+
+#[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestResourceHashes {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sha512: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sha256: Option<String>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct ManifestServerEntry {
+    pub name: String,
+    pub address: String,
+}
