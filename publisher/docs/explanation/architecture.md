@@ -16,7 +16,7 @@ wiring and lifecycle management.
 ## Key Concepts
 
 - Dependencies point inward from adapters to application and domain.
-- The pinned protocol submodule owns the wire contract and conformance fixtures.
+- The shared sibling protocol tree owns the wire contract and conformance fixtures.
 - Bukkit handlers contain translation, not manifest or persistence policy.
 - Challenge and compliance repositories are synchronized across Paper and HTTP
   threads.

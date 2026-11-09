@@ -9,7 +9,7 @@ Versioned installers and updater signatures belong to the tagged GitHub release.
 The current channel pointer is a Tauri static manifest at:
 
 ```text
-https://raw.githubusercontent.com/lutzseverino/minecraft-setup-manager/update-channel/latest.json
+https://raw.githubusercontent.com/lutzseverino/minecraft-setup/update-channel/latest.json
 ```
 
 The release workflow promotes that pointer only after the draft release contains

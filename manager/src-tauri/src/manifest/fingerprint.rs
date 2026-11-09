@@ -40,7 +40,7 @@ mod tests {
 
     #[test]
     fn matches_the_protocol_golden_fingerprint() {
-        let bytes = include_bytes!("../../../protocol/fixtures/v1/valid/minimal-vanilla.json");
+        let bytes = include_bytes!("../../../../protocol/fixtures/v1/valid/minimal-vanilla.json");
         let manifest = crate::manifest::parse::parse_manifest(
             bytes,
             "https://setup.example.com/manifest.json",

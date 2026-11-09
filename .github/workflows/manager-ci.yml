@@ -1,4 +1,4 @@
-name: CI
+name: Manager CI
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: manager-ci-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -15,24 +15,31 @@ permissions:
 
 jobs:
   validate:
-    name: Validate (${{ matrix.os }})
+    defaults:
+      run:
+        working-directory: manager
+    name: Validate manager (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         include:
           - os: macos-15
+            target: aarch64-apple-darwin
+            bundles: app,dmg
+          - os: macos-15-intel
+            target: x86_64-apple-darwin
             bundles: app,dmg
           - os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
             bundles: appimage,deb
           - os: windows-2022
+            target: x86_64-pc-windows-msvc
             bundles: nsis
 
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        with:
-          submodules: true
 
       - name: Install Linux desktop dependencies
         if: runner.os == 'Linux'
@@ -44,6 +51,7 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           cache: npm
+          cache-dependency-path: manager/package-lock.json
           node-version: 24
 
       - name: Install pinned npm
@@ -53,11 +61,12 @@ jobs:
         uses: dtolnay/rust-toolchain@4be7066ada62dd38de10e7b70166bc74ed198c30 # stable
         with:
           components: clippy, rustfmt
+          targets: ${{ matrix.target }}
 
       - name: Cache Rust build artifacts
         uses: swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
         with:
-          workspaces: src-tauri
+          workspaces: manager/src-tauri
 
       - name: Install frontend dependencies
         run: npm ci
@@ -75,4 +84,4 @@ jobs:
         run: cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets --all-features -- -D warnings
 
       - name: Build native desktop bundles
-        run: npm run tauri -- build --bundles ${{ matrix.bundles }}
+        run: npm run tauri -- build --target ${{ matrix.target }} --bundles ${{ matrix.bundles }}

@@ -24,7 +24,7 @@ Every tutorial should include:
 - `Steps`
 - `Result`
 
-Use the [tutorial template](../_templates/tutorial.template.md) for new tutorials.
+Use the [tutorial template](../../../docs/development/templates/tutorial.template.md) for new tutorials.
 
 ## Tutorials
 

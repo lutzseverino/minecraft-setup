@@ -5,14 +5,15 @@ version tag.
 
 ## Steps
 
+Run commands from `publisher/`. Follow the [shared release gates](../../../docs/development/component-releases.md) before any publication.
+
 1. Choose the next version according to the
    [Romantic Versioning policy](../reference/versioning.md) and update the
    `<version>` in `pom.xml`.
 2. Review the complete change set and run the same build as CI:
 
    ```bash
-   git submodule update --init
-   ./mvnw --batch-mode --no-transfer-progress verify
+      ./mvnw --batch-mode --no-transfer-progress verify
    ```
 
 3. Confirm the packaged JAR exists at
@@ -24,8 +25,8 @@ version tag.
 5. Create and push a tag that exactly matches `pom.xml`. For version `0.1.1`:
 
    ```bash
-   git tag v0.1.1
-   git push origin v0.1.1
+   git tag publisher-v0.1.1
+   git push origin publisher-v0.1.1
    ```
 
    The tag workflow independently checks the tag/version match, runs the full
@@ -35,7 +36,7 @@ version tag.
 
 ## Verification
 
-1. Confirm the GitHub release is public and `v0.*` is marked **Pre-release**.
+1. Confirm the GitHub release is public and `publisher-v0.*` is marked **Pre-release**.
 2. Confirm it contains exactly the expected versioned JAR and `.sha256` file.
 3. Download both assets and verify the checksum:
 
@@ -48,7 +49,7 @@ version tag.
 
 ## Notes
 
-- Protect `v*` tag creation and changes to `.github/workflows/release.yml` with
+- Protect `publisher-v*` tag creation and changes to `.github/workflows/publisher-release.yml` with
   repository rules. Prefer a required reviewer on the `release` environment.
 - Enable GitHub immutable releases before the first public release.
 - A failed draft run can be retried. The workflow refuses to replace assets on

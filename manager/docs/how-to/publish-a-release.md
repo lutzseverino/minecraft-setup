@@ -5,6 +5,8 @@ release secrets, publish a tagged prerelease, and verify the update channel.
 
 ## Steps
 
+Run commands from `manager/`. Follow the [shared release gates](../../../docs/development/component-releases.md) before any publication.
+
 1. Generate the updater key once on a trusted offline or operator-controlled
    computer. Choose and retain a strong password when prompted.
 
@@ -43,7 +45,7 @@ release secrets, publish a tagged prerelease, and verify the update channel.
    gh secret set --env release TAURI_SIGNING_PRIVATE_KEY_PASSWORD
    ```
 
-5. Enable GitHub immutable releases, protect `v*` tag creation with a repository
+5. Enable GitHub immutable releases, protect `manager-v*` tag creation with a repository
    ruleset, and require review for changes to the release workflow, updater
    public key, and update-channel tooling. Updater signing does not protect a
    workflow that an attacker can change before a trusted tag is built.
@@ -64,8 +66,8 @@ release secrets, publish a tagged prerelease, and verify the update channel.
 7. Create and push the matching tag. For version `0.1.4`:
 
    ```bash
-   git tag v0.1.4
-   git push origin v0.1.4
+   git tag manager-v0.1.4
+   git push origin manager-v0.1.4
    ```
 
    The workflow validates first, builds signed updater artifacts for every
@@ -95,7 +97,7 @@ release secrets, publish a tagged prerelease, and verify the update channel.
 
 ## Notes
 
-- `v0.1.3` cannot update itself. Install the first updater-enabled release
+- Historical source `v0.1.3` cannot update itself. Install the first updater-enabled release
   manually, then use that build as the baseline for its successor.
 - Key rotation requires a transition release signed by the old private key and
   embedding the new public key. Do not replace the configured key without that

@@ -1,20 +1,14 @@
-<div align="center">
-  <h1>Minecraft Setup Publisher</h1>
-  <p>Publish and enforce declarative Minecraft client setup requirements from Paper.</p>
+# Minecraft Setup Publisher
 
-  [![CI](https://github.com/lutzseverino/minecraft-setup-publisher/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup-publisher/actions/workflows/ci.yml)
-  [![Releases](https://img.shields.io/github/v/release/lutzseverino/minecraft-setup-publisher?include_prereleases)](https://github.com/lutzseverino/minecraft-setup-publisher/releases)
-  [![License: MIT](https://img.shields.io/badge/license-MIT-2f3437)](LICENSE)
-</div>
 
 Minecraft Setup Publisher is a Paper plugin for servers that use
-[Minecraft Setup Manager](https://github.com/lutzseverino/minecraft-setup-manager).
+[Minecraft Setup Manager](../manager/README.md).
 It validates and publishes a declarative client setup manifest. It can also ask
 players to apply the current setup before joining.
 
 The plugin never sends scripts or inspects a player's computer. Manifests can
 request only the bounded actions defined by the independently versioned
-[Minecraft Setup Protocol](https://github.com/lutzseverino/minecraft-setup-protocol).
+[Minecraft Setup Protocol](../protocol/README.md).
 
 > [!IMPORTANT]
 > Version `0.x` is under active development. Keep `gate.mode: off` until the
@@ -122,7 +116,6 @@ The plugin targets Java 17 and Paper 1.20.1 or newer. Builds require JDK 21 so
 the pinned formatter can run while Maven emits Java 17-compatible bytecode.
 
 ```bash
-git submodule update --init
 ./mvnw verify
 ```
 
@@ -138,3 +131,10 @@ by reader intent so durable guidance has one predictable home.
 ## License
 
 Minecraft Setup Publisher is available under the [MIT License](LICENSE).
+
+## Shared development
+
+Run component commands from `publisher/`. Follow the
+[shared setup and validation](../docs/development/README.md) and
+[contribution guide](../CONTRIBUTING.md). Future releases use `publisher-v…` tags in
+[Minecraft Setup](https://github.com/lutzseverino/minecraft-setup/releases).

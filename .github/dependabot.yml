@@ -6,3 +6,27 @@ updates:
       interval: weekly
     commit-message:
       prefix: chore
+  - package-ecosystem: npm
+    directory: /protocol
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore
+  - package-ecosystem: npm
+    directory: /manager
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore
+  - package-ecosystem: cargo
+    directory: /manager/src-tauri
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore
+  - package-ecosystem: maven
+    directory: /publisher
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore

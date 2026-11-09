@@ -26,7 +26,7 @@ Decision records must use this section order:
 - `Consequences`
 - `Alternatives Considered`
 
-Use the [decision template](../_templates/decision.template.md) for new decision records.
+Use the [decision template](../../../docs/development/templates/decision.template.md) for new decision records.
 
 ## Decisions
 

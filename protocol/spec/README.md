@@ -2,7 +2,7 @@
 
 This directory contains the normative, versioned Minecraft Setup Protocol. A
 change here can affect conformance and must follow the repository's
-[versioning rules](../docs/usage/reference/versioning.md).
+[versioning rules](../../docs/usage/reference/versioning.md).
 
 ## Versions
 
@@ -11,8 +11,8 @@ change here can affect conformance and must follow the repository's
 
 ## Contributing
 
-[Contributing](../CONTRIBUTING.md)
+[Contributing](../../CONTRIBUTING.md)
 
 ## Development
 
-[Setup and validation](../docs/development/README.md)
+[Setup and validation](../../docs/development/README.md)

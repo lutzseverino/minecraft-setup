@@ -25,7 +25,7 @@ Every explanation document should include:
 - `Key Concepts`
 - `Implications`
 
-Use the [explanation template](../_templates/explanation.template.md) for new explanation documents.
+Use the [explanation template](../../../docs/development/templates/explanation.template.md) for new explanation documents.
 
 ## Documents
 

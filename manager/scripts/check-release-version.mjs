@@ -1,8 +1,4 @@
-import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-
-const projectRoot = fileURLToPath(new URL("../", import.meta.url));
 
 async function readJson(path) {
   return JSON.parse(await readFile(new URL(path, import.meta.url), "utf8"));
@@ -13,32 +9,20 @@ const [packageJson, tauriConfig] = await Promise.all([
   readJson("../src-tauri/tauri.conf.json"),
 ]);
 
-const cargoMetadata = JSON.parse(
-  execFileSync(
-    "cargo",
-    [
-      "metadata",
-      "--format-version",
-      "1",
-      "--no-deps",
-      "--manifest-path",
-      "src-tauri/Cargo.toml",
-    ],
-    { cwd: projectRoot, encoding: "utf8" },
-  ),
+const cargoSource = await readFile(
+  new URL("../src-tauri/Cargo.toml", import.meta.url),
+  "utf8",
 );
-
-const cargoPackage = cargoMetadata.packages.find(
-  (candidate) => candidate.name === packageJson.name,
-);
-
-if (!cargoPackage) {
-  throw new Error(`Cargo package ${packageJson.name} was not found.`);
-}
+const packageSection = cargoSource
+  .split(/^\[package\]\s*$/m)[1]
+  ?.split(/^\[/m)[0];
+const cargoVersion = packageSection?.match(/^version\s*=\s*"([^"]+)"/m)?.[1];
+if (!cargoVersion)
+  throw new Error("Cargo package must declare an explicit version.");
 
 const versions = new Map([
   ["package.json", packageJson.version],
-  ["src-tauri/Cargo.toml", cargoPackage.version],
+  ["src-tauri/Cargo.toml", cargoVersion],
   ["src-tauri/tauri.conf.json", tauriConfig.version],
 ]);
 const expectedVersion = packageJson.version;
@@ -58,9 +42,9 @@ const releaseTag =
     ? process.env.GITHUB_REF_NAME
     : undefined;
 
-if (releaseTag && releaseTag !== `v${expectedVersion}`) {
+if (releaseTag && releaseTag !== `manager-v${expectedVersion}`) {
   throw new Error(
-    `Release tag ${releaseTag} does not match application version v${expectedVersion}.`,
+    `Release tag ${releaseTag} does not match application version manager-v${expectedVersion}.`,
   );
 }
 

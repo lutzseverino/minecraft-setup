@@ -25,7 +25,7 @@ Every reference document should include:
 - stable facts, structures, or rules
 - examples only when they clarify the contract
 
-Use the [reference template](../_templates/reference.template.md) for new reference documents.
+Use the [reference template](../../../docs/development/templates/reference.template.md) for new reference documents.
 
 ## Documents
 

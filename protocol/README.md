@@ -1,13 +1,5 @@
-<div align="center">
-  <h1>Minecraft Setup Protocol</h1>
-  <p>The language-neutral contract between Minecraft setup publishers and client setup managers.</p>
+# Minecraft Setup Protocol
 
-  [![Node.js 24](https://img.shields.io/badge/Node.js-24-339933)](https://nodejs.org/)
-  [![JavaScript](https://img.shields.io/badge/JavaScript-reference-F7DF1E)](src)
-  [![CI](https://github.com/lutzseverino/minecraft-setup-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup-protocol/actions/workflows/ci.yml)
-  [![Releases](https://img.shields.io/github/v/release/lutzseverino/minecraft-setup-protocol?include_prereleases)](https://github.com/lutzseverino/minecraft-setup-protocol/releases)
-  [![License: MIT](https://img.shields.io/badge/license-MIT-2f3437)](LICENSE)
-</div>
 
 Minecraft Setup Protocol defines the declarative document a server publishes to
 describe its desired client setup. It is independently owned so a desktop app,
@@ -60,12 +52,19 @@ must use a separately reviewed client component.
 
 ## Documentation
 
-[Documentation index](docs/README.md)
+[Documentation index](../docs/README.md)
 
 ## Contributing
 
-[Contributing](CONTRIBUTING.md)
+[Contributing](../CONTRIBUTING.md)
 
 ## License
 
 [MIT License](LICENSE)
+
+## Shared development
+
+Run component commands from `protocol/`. Follow the
+[shared setup and validation](../docs/development/README.md) and
+[contribution guide](../CONTRIBUTING.md). Future releases use `protocol-v…` tags in
+[Minecraft Setup](https://github.com/lutzseverino/minecraft-setup/releases).

@@ -24,7 +24,7 @@ Every how-to guide should include:
 - `Steps`
 - `Verification`
 
-Use the [how-to template](../_templates/how-to.template.md) for new guides.
+Use the [how-to template](../../../docs/development/templates/how-to.template.md) for new guides.
 
 ## Guides
 

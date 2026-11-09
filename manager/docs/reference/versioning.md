@@ -9,9 +9,9 @@ incompatible change within the same project, and a minor increment represents a
 compatible feature or fix. Reaching a stable product moves the project number to
 `1.0.0`.
 
-Release tags use the form `v0.1.0`. A tag must exactly match the version in
+Release tags use the form `manager-v0.1.0`. A tag must exactly match the version in
 `package.json`, Cargo, and Tauri configuration. Pushing a valid version tag runs
-the release workflow and publishes native installers. `v0.*` tags are marked as
+the release workflow and publishes native installers. `manager-v0.*` tags are marked as
 development releases automatically.
 
 Application discovery intentionally does not use GitHub's standard latest

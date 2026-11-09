@@ -69,28 +69,40 @@ function releaseFor(manifest) {
     assets,
     isDraft: true,
     isPrerelease: true,
-    tagName: `v${manifest.version}`,
+    tagName: `manager-v${manifest.version}`,
   };
 }
 
 test("validates a complete multi-installer updater release", () => {
   const manifest = updaterManifest();
   assert.doesNotThrow(() =>
-    validateUpdateRelease(manifest, releaseFor(manifest), "v0.1.4"),
+    validateUpdateRelease(manifest, releaseFor(manifest), "manager-v0.1.4"),
   );
 
   const alreadyPublished = releaseFor(manifest);
   alreadyPublished.isDraft = false;
   assert.doesNotThrow(() =>
-    validateUpdateRelease(manifest, alreadyPublished, "v0.1.4"),
+    validateUpdateRelease(manifest, alreadyPublished, "manager-v0.1.4"),
   );
+});
+
+test("rejects another component's release even with matching updater bytes", () => {
+  const manifest = updaterManifest();
+  for (const tag of ["v0.1.4", "protocol-v0.1.4", "publisher-v0.1.4"]) {
+    const release = { ...releaseFor(manifest), tagName: tag };
+    assert.throws(
+      () => validateUpdateRelease(manifest, release, tag),
+      /Release tag must use manager-v/,
+    );
+  }
 });
 
 test("rejects a manifest without every supported installer", () => {
   const manifest = updaterManifest();
   delete manifest.platforms["linux-x86_64-deb"];
   assert.throws(
-    () => validateUpdateRelease(manifest, releaseFor(manifest), "v0.1.4"),
+    () =>
+      validateUpdateRelease(manifest, releaseFor(manifest), "manager-v0.1.4"),
     /linux-x86_64-deb/,
   );
 });
@@ -102,7 +114,7 @@ test("rejects a manifest that references an asset without its signature file", (
     (asset) => asset.name !== "artifact_aarch64.app.tar.gz.sig",
   );
   assert.throws(
-    () => validateUpdateRelease(manifest, release, "v0.1.4"),
+    () => validateUpdateRelease(manifest, release, "manager-v0.1.4"),
     /missing the published/,
   );
 });
@@ -114,7 +126,7 @@ test("rejects an inline signature that differs from the published file", () => {
     (asset) => asset.name === "artifact_aarch64.app.tar.gz.sig",
   ).content = updaterSignature(99);
   assert.throws(
-    () => validateUpdateRelease(manifest, release, "v0.1.4"),
+    () => validateUpdateRelease(manifest, release, "manager-v0.1.4"),
     /inline signature does not match/,
   );
 });
@@ -133,7 +145,7 @@ test("rejects an updater target mapped to the wrong installer type", () => {
   signatureAsset.name = "wrong-package.zip.sig";
 
   assert.throws(
-    () => validateUpdateRelease(manifest, release, "v0.1.4"),
+    () => validateUpdateRelease(manifest, release, "manager-v0.1.4"),
     /wrong installer type/,
   );
 });

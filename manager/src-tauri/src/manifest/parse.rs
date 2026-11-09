@@ -56,7 +56,7 @@ mod tests {
 
     #[test]
     fn rejects_explicit_nulls() {
-        let bytes = include_bytes!("../../../protocol/fixtures/v1/invalid/explicit-null.json");
+        let bytes = include_bytes!("../../../../protocol/fixtures/v1/invalid/explicit-null.json");
         let error = parse_manifest(bytes, "https://setup.example.com/manifest.json")
             .expect_err("explicit null must fail");
 
@@ -64,7 +64,7 @@ mod tests {
     }
 
     #[test]
-    fn conforms_to_the_pinned_protocol_fixtures() {
+    fn conforms_to_the_shared_protocol_fixtures() {
         let fixture_root = protocol_fixture_root();
         let catalog: FixtureCatalog = serde_json::from_slice(
             &fs::read(fixture_root.join("catalog.json")).expect("read fixture catalog"),
@@ -91,6 +91,6 @@ mod tests {
     }
 
     fn protocol_fixture_root() -> PathBuf {
-        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../protocol/fixtures/v1")
+        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../protocol/fixtures/v1")
     }
 }

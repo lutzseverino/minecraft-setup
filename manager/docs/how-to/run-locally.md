@@ -9,7 +9,6 @@ Install Node.js 24, npm 11.6.2, stable Rust, and the
 operating system. Then run:
 
 ```bash
-git submodule update --init
 npm ci
 npm run tauri:dev
 ```

@@ -10,8 +10,7 @@ implementation model.
 Minecraft Setup Manager is a Tauri 2 desktop app with a Vite, React, and
 TypeScript frontend.
 
-The language-neutral manifest contract is pinned through the `protocol`
-submodule. Rust manifest models and validators are consumer implementations of
+The language-neutral manifest contract lives in the sibling `protocol/` tree. Rust manifest models and validators are consumer implementations of
 that contract, not its owner. Protocol fixtures run directly in the Rust test
 suite and golden fingerprints must match before a protocol update is accepted.
 
@@ -126,7 +125,7 @@ unchanged so the desired state can be repaired by rerunning it.
 
 - New side effects belong in the Rust module that owns the affected domain.
 - Frontend code depends on typed command contracts rather than backend details.
-- Protocol changes are adopted through an immutable protocol release and its
+- Protocol changes are reviewed in the shared sibling tree and its
   conformance fixtures.
 - Unsupported launcher behavior remains disabled until its adapter can apply
   and validate the complete operation.

@@ -1,22 +1,23 @@
-name: Release
+name: Manager release
 
 on:
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "manager-v*"
 
 permissions:
   contents: read
 
 jobs:
   validate:
+    defaults:
+      run:
+        working-directory: manager
     name: Validate release
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        with:
-          submodules: true
 
       - name: Install Linux desktop dependencies
         run: |
@@ -27,6 +28,7 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           cache: npm
+          cache-dependency-path: manager/package-lock.json
           node-version: 24
 
       - name: Install pinned npm
@@ -40,13 +42,16 @@ jobs:
       - name: Cache Rust build artifacts
         uses: swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
         with:
-          workspaces: src-tauri
+          workspaces: manager/src-tauri
 
       - name: Install frontend dependencies
         run: npm ci
 
       - name: Check frontend and tooling
         run: npm run check
+
+      - name: Validate component release tag
+        run: node ../scripts/release-version.mjs manager "$GITHUB_REF_NAME"
 
       - name: Check updater release configuration
         run: npm run check:updater-config:release
@@ -61,6 +66,9 @@ jobs:
         run: cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets --all-features -- -D warnings
 
   publish:
+    defaults:
+      run:
+        working-directory: manager
     name: Bundle ${{ matrix.name }}
     needs: validate
     environment: release
@@ -91,8 +99,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        with:
-          submodules: true
 
       - name: Install Linux desktop dependencies
         if: runner.os == 'Linux'
@@ -104,6 +110,7 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           cache: npm
+          cache-dependency-path: manager/package-lock.json
           node-version: 24
 
       - name: Install pinned npm
@@ -117,7 +124,7 @@ jobs:
       - name: Cache Rust build artifacts
         uses: swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
         with:
-          workspaces: src-tauri
+          workspaces: manager/src-tauri
 
       - name: Install frontend dependencies
         run: npm ci
@@ -131,9 +138,10 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
           VITE_APP_UPDATER_ENABLED: "true"
         with:
+          projectPath: manager
           args: ${{ matrix.args }} --config src-tauri/tauri.release.conf.json
           generateReleaseNotes: true
-          prerelease: ${{ startsWith(github.ref_name, 'v0.') }}
+          prerelease: ${{ startsWith(github.ref_name, 'manager-v0.') }}
           releaseBody: |
             Native installers and application update artifacts for Minecraft Setup Manager.
 
@@ -148,6 +156,10 @@ jobs:
           uploadUpdaterSignatures: true
 
   finalize:
+    environment: release
+    defaults:
+      run:
+        working-directory: manager
     name: Publish release
     needs: publish
     permissions:
@@ -161,6 +173,7 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           cache: npm
+          cache-dependency-path: manager/package-lock.json
           node-version: 24
 
       - name: Install pinned npm

@@ -1,7 +1,7 @@
 # Setup Manifest Integration
 
 Minecraft Setup Manager consumes versioned manifests from the independently
-owned [Minecraft Setup Protocol](../../protocol) repository. The pinned submodule
+versioned [Minecraft Setup Protocol](../../../protocol/README.md) tree. The sibling tree
 is the source of truth for schema, semantics, canonical fingerprints, fixtures,
 and HTTPS publication behavior.
 
@@ -43,11 +43,7 @@ size, CDN URL, and SHA-512 digest.
 
 ## Updating The Protocol
 
-Protocol updates are reviewed and released in the protocol repository first.
-To update this consumer, move the `protocol` submodule to an immutable release,
-run the complete Rust conformance suite, and commit the submodule pointer with
-the required consumer changes.
-
-Do not edit files inside the submodule from this repository. Do not restate the
-wire schema in application code or documentation unless the code is enforcing a
-consumer-owned safety rule.
+Protocol updates are reviewed in the same repository against the shared
+`protocol/` tree. Run the full protocol and consumer conformance suites for
+changes to schemas, fixtures or semantics. Release the components independently;
+the manager's implementation remains distinct from the normative protocol.

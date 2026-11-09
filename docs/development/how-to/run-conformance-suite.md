@@ -4,7 +4,7 @@ Validate the reference implementation and every shared fixture.
 
 ## Steps
 
-Install Node.js 24 and npm 11.6.2, then run:
+Install Node.js 24 and npm 11.6.2, then run from `protocol/`:
 
 ```bash
 npm ci

@@ -1,4 +1,5 @@
 import { PublicKey } from "@threema/wasm-minisign-verify";
+import { parseReleaseTag } from "../../scripts/release-version.mjs";
 
 const requiredUpdaterTargets = [
   "darwin-aarch64-app",
@@ -17,7 +18,7 @@ const updateArtifactNamePatterns = {
 
 export const updaterPublicKeyPlaceholder = "__TAURI_UPDATER_PUBLIC_KEY__";
 export const updateChannelUrl =
-  "https://raw.githubusercontent.com/lutzseverino/minecraft-setup-manager/update-channel/latest.json";
+  "https://raw.githubusercontent.com/lutzseverino/minecraft-setup/update-channel/latest.json";
 
 function isObject(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value);
@@ -142,11 +143,7 @@ export function validateUpdateRelease(manifest, release, expectedTag) {
     throw new Error("The updater manifest must contain a platforms object.");
   }
 
-  const expectedVersion = requireString(expectedTag, "Release tag").replace(
-    /^v/,
-    "",
-  );
-  parseAppVersion(expectedVersion, "Release tag version");
+  const expectedVersion = parseReleaseTag("manager", expectedTag);
   if (manifest.version !== expectedVersion) {
     throw new Error(
       `Updater manifest version ${manifest.version} does not match ${expectedVersion}.`,

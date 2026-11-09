@@ -11,7 +11,7 @@
 
     <name>Minecraft Setup Publisher</name>
     <description>Paper plugin that publishes Minecraft client setup manifests and optionally gates login on setup attestation.</description>
-    <url>https://github.com/lutzseverino/minecraft-setup-publisher</url>
+    <url>https://github.com/lutzseverino/minecraft-setup</url>
 
     <licenses>
         <license>
@@ -115,7 +115,7 @@
                 <filtering>true</filtering>
             </resource>
             <resource>
-                <directory>protocol/schema</directory>
+                <directory>${project.basedir}/../protocol/schema</directory>
                 <targetPath>protocol/schema</targetPath>
                 <filtering>false</filtering>
             </resource>

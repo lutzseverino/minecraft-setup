@@ -4,7 +4,7 @@ main: com.lutzseverino.minecraftsetup.bootstrap.MinecraftSetupPublisherPlugin
 api-version: '1.20'
 author: lutzseverino
 description: Publishes declarative client setup and optionally asks players to apply it before joining.
-website: https://github.com/lutzseverino/minecraft-setup-publisher
+website: https://github.com/lutzseverino/minecraft-setup
 commands:
   setuppublisher:
     description: Validate, publish, reload, or inspect the current client setup.

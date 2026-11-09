@@ -1,11 +1,5 @@
-<div align="center">
-  <h1>Minecraft Setup Manager</h1>
-  <p>Prepare and update a Minecraft client from a server-provided setup file.</p>
+# Minecraft Setup Manager
 
-  [![CI](https://github.com/lutzseverino/minecraft-setup-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/lutzseverino/minecraft-setup-manager/actions/workflows/ci.yml)
-  [![Releases](https://img.shields.io/github/v/release/lutzseverino/minecraft-setup-manager?include_prereleases)](https://github.com/lutzseverino/minecraft-setup-manager/releases)
-  [![License: MIT](https://img.shields.io/badge/license-MIT-2f3437)](LICENSE)
-</div>
 
 Minecraft Setup Manager is a server-agnostic desktop app for players. Enter a
 Minecraft server address, review what that server needs, and let the app prepare
@@ -58,7 +52,7 @@ https://play.example.com/.well-known/minecraft-setup-manager/manifest.json
 
 The language-neutral schema, semantics, fingerprints, publication rules, and
 optional setup attestation are owned by the
-[Minecraft Setup Protocol](https://github.com/lutzseverino/minecraft-setup-protocol).
+[Minecraft Setup Protocol](../protocol/README.md).
 Server-specific manifests belong in server-owned infrastructure, not this app.
 
 ## Development
@@ -66,7 +60,6 @@ Server-specific manifests belong in server-owned infrastructure, not this app.
 Install Node.js 24, npm 11.6.2, stable Rust, and the Tauri prerequisites, then:
 
 ```bash
-git submodule update --init
 npm ci
 npm run tauri:dev
 ```
@@ -84,3 +77,10 @@ by reader intent so durable guidance has one predictable home.
 ## License
 
 Minecraft Setup Manager is available under the [MIT License](LICENSE).
+
+## Shared development
+
+Run component commands from `manager/`. Follow the
+[shared setup and validation](../docs/development/README.md) and
+[contribution guide](../CONTRIBUTING.md). Future releases use `manager-v…` tags in
+[Minecraft Setup](https://github.com/lutzseverino/minecraft-setup/releases).

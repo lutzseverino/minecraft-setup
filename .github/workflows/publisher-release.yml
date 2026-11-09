@@ -1,19 +1,22 @@
-name: Release
+name: Publisher release
 
 on:
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "publisher-v*"
 
 permissions:
   contents: read
 
 concurrency:
-  group: release-${{ github.ref_name }}
+  group: publisher-release-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
   publish:
+    defaults:
+      run:
+        working-directory: publisher
     name: Verify and publish plugin
     environment: release
     permissions:
@@ -22,43 +25,26 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        with:
-          submodules: true
 
       - name: Install Java
         uses: actions/setup-java@03ad4de0992f5dab5e18fcb136590ce7c4a0ac95 # v5.6.0
         with:
           cache: maven
+          cache-dependency-path: publisher/pom.xml
           distribution: temurin
           java-version: 21
 
+      - name: Install Node.js for release routing
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+
       - name: Validate release version
         id: version
-        shell: bash
-        run: |
-          set -euo pipefail
-          tag="${GITHUB_REF_NAME}"
-          if [[ ! "$tag" =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
-            echo "Release tag must use vPROJECT.MAJOR.MINOR with numeric components: $tag" >&2
-            exit 1
-          fi
-          project_line="${BASH_REMATCH[1]}"
+        run: node ../scripts/release-version.mjs publisher "$GITHUB_REF_NAME"
 
-          version="$(./mvnw --batch-mode --no-transfer-progress help:evaluate \
-            -Dexpression=project.version -DforceStdout -q)"
-          if [[ "$tag" != "v$version" ]]; then
-            echo "Release tag $tag does not match pom.xml version $version" >&2
-            exit 1
-          fi
-
-          prerelease=false
-          if [[ "$project_line" == "0" ]]; then
-            prerelease=true
-          fi
-          echo "number=$version" >> "$GITHUB_OUTPUT"
-          echo "prerelease=$prerelease" >> "$GITHUB_OUTPUT"
-
-      - name: Verify plugin
+      - name: Verify publisher
         run: ./mvnw --batch-mode --no-transfer-progress verify
 
       - name: Prepare release assets
