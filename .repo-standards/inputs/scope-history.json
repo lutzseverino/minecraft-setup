@@ -1,7 +1,7 @@
 {
   "format": "repo-standards/scope-history/v6",
   "evidence": "historical",
-  "inspection": "sha256:75be63281af8ae81e6c1aa8a89344938fd6ee9d8e812ae27e2772afe58fbc311",
+  "inspection": "sha256:e80b9d449d328191e7769994b6e9b056ee9d51b30e1ac9f7c22bc13b07ab2aeb",
   "resolved": {
     "description": "The standard profile plus the factory's repository files and workflow rules, for a repository a factory serves",
     "declarations": [
@@ -107,9 +107,6 @@
             "manager/docs/adr/README.md",
             "manager/docs/adr/signed-application-update-channel.md",
             "manager/docs/adr/verified-launcher-profile-formats.md",
-            "manager/docs/decisions/README.md",
-            "manager/docs/decisions/signed-application-update-channel.md",
-            "manager/docs/decisions/verified-launcher-profile-formats.md",
             "manager/docs/development/README.md",
             "manager/docs/development/explanation/README.md",
             "manager/docs/development/explanation/architecture.md",
@@ -118,20 +115,6 @@
             "manager/docs/development/how-to/publish-a-release.md",
             "manager/docs/development/how-to/run-locally.md",
             "manager/docs/development/how-to/validate-sklauncher.md",
-            "manager/docs/explanation/README.md",
-            "manager/docs/explanation/architecture.md",
-            "manager/docs/explanation/safety-model.md",
-            "manager/docs/how-to/README.md",
-            "manager/docs/how-to/publish-a-release.md",
-            "manager/docs/how-to/run-locally.md",
-            "manager/docs/how-to/validate-sklauncher.md",
-            "manager/docs/reference/README.md",
-            "manager/docs/reference/application-updates.md",
-            "manager/docs/reference/implementation-status.md",
-            "manager/docs/reference/launcher-validation.md",
-            "manager/docs/reference/manifest-integration.md",
-            "manager/docs/reference/supported-capabilities.md",
-            "manager/docs/reference/versioning.md",
             "manager/docs/usage/README.md",
             "manager/docs/usage/reference/README.md",
             "manager/docs/usage/reference/application-updates.md",
@@ -148,20 +131,6 @@
             "publisher/docs/development/explanation/setup-compliance.md",
             "publisher/docs/development/how-to/README.md",
             "publisher/docs/development/how-to/publish-a-release.md",
-            "publisher/docs/explanation/README.md",
-            "publisher/docs/explanation/architecture.md",
-            "publisher/docs/explanation/publication-model.md",
-            "publisher/docs/explanation/setup-compliance.md",
-            "publisher/docs/how-to/README.md",
-            "publisher/docs/how-to/configure-login-gate.md",
-            "publisher/docs/how-to/configure-reverse-proxy.md",
-            "publisher/docs/how-to/publish-a-release.md",
-            "publisher/docs/reference/README.md",
-            "publisher/docs/reference/commands-and-permissions.md",
-            "publisher/docs/reference/configuration.md",
-            "publisher/docs/reference/versioning.md",
-            "publisher/docs/tutorials/README.md",
-            "publisher/docs/tutorials/publish-your-first-setup.md",
             "publisher/docs/usage/README.md",
             "publisher/docs/usage/how-to/README.md",
             "publisher/docs/usage/how-to/configure-login-gate.md",
@@ -1823,7 +1792,7 @@
     ]
   },
   "discovery": {
-    "identity": "sha256:fa0930b850bace82f411e54410a3d3bf04eb84d8a112030a9ce6c1a1e529d845",
+    "identity": "sha256:f80b0be399095d49fbbf80b39c6a4054fdbdf6ae5f481668192f90d24b480c0b",
     "proposal": {
       "format": "repo-standards/scope/v2",
       "declarations": [
@@ -1835,7 +1804,7 @@
         },
         {
           "id": "documentation",
-          "coverage": "All maintained documents in docs/, manager/docs/ and publisher/docs/, including moved destinations, category indexes and relevant link repairs. Retain historical root-doc scope where files still exist. Normative protocol/spec/ stays separate and excluded. Component Project READMEs are owned by project-readmes. Shared setup/contribution guidance remains at root.",
+          "coverage": "All maintained documents in docs/, manager/docs/ and publisher/docs/, carrying forward the approved documentation roots and their existing files, category indexes and link-repair coverage. Retire the 31 absent move sources from the previous adoption; their maintained destinations stay included. Normative protocol/spec/ stays separate and excluded. Component Project READMEs are owned by project-readmes; exact agent configuration remains owned by its declarations. Shared setup/contribution guidance remains at root.",
           "candidates": [
             {
               "path": "docs/README.md",
@@ -2087,30 +2056,6 @@
               ]
             },
             {
-              "path": "manager/docs/decisions/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/decisions/signed-application-update-channel.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/decisions/verified-launcher-profile-formats.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
               "path": "manager/docs/development/README.md",
               "decision": "include",
               "reason": "Category index for the component documentation root.",
@@ -2170,118 +2115,6 @@
               "path": "manager/docs/development/how-to/validate-sklauncher.md",
               "decision": "include",
               "reason": "Destination of manager/docs/how-to/validate-sklauncher.md under the component documentation root.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/explanation/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/explanation/architecture.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/explanation/safety-model.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/how-to/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/how-to/publish-a-release.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/how-to/run-locally.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/how-to/validate-sklauncher.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/application-updates.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/implementation-status.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/launcher-validation.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/manifest-integration.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/supported-capabilities.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "manager"
-              ]
-            },
-            {
-              "path": "manager/docs/reference/versioning.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
               "evidence": [
                 "manager"
               ]
@@ -2480,118 +2313,6 @@
               "path": "publisher/docs/development/how-to/publish-a-release.md",
               "decision": "include",
               "reason": "Destination of publisher/docs/how-to/publish-a-release.md under the component documentation root.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/explanation/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/explanation/architecture.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/explanation/publication-model.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/explanation/setup-compliance.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/how-to/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/how-to/configure-login-gate.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/how-to/configure-reverse-proxy.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/how-to/publish-a-release.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/reference/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/reference/commands-and-permissions.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/reference/configuration.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/reference/versioning.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/tutorials/README.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
-              "evidence": [
-                "publisher"
-              ]
-            },
-            {
-              "path": "publisher/docs/tutorials/publish-your-first-setup.md",
-              "decision": "include",
-              "reason": "Maintained component documentation; bring this documentation root under usage, development and ADR categories.",
               "evidence": [
                 "publisher"
               ]
@@ -2829,168 +2550,7 @@
         }
       ]
     },
-    "absence": [
-      {
-        "kind": "absence",
-        "path": "docs/development/verify-agent-sandbox.sh",
-        "identity": "sha256:9609d19ea4fdc0c3f32f8a15a798327ccf569d77bf77e4025e7857d813b94e68"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/decisions/README.md",
-        "identity": "sha256:3797169541160e1508b2506a478c53bbd8b9094926f57f2fc0d144fe8d010a7a"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/decisions/signed-application-update-channel.md",
-        "identity": "sha256:54fcc9765b32e35b1207a1dfc698169ce47e0a7afd877fb3865d04a39d02f729"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/decisions/verified-launcher-profile-formats.md",
-        "identity": "sha256:7d9c09de378eb7d6fd0e898c5e0ad85f9c3cc45de2f1f6cc964e45726d4ceb93"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/explanation/README.md",
-        "identity": "sha256:a11ed9ec00edf4b480237386b64cb8c43be13cadf0a34c206ce9ff10b254a1b4"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/explanation/architecture.md",
-        "identity": "sha256:4994d545609a943cfe227b0a60969ba723624a6a6d88d70eefeb775780f0abb6"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/explanation/safety-model.md",
-        "identity": "sha256:d1f23be74d432af97f2ba6f01b3818f75c496b25b1fb20bb4147046f0ccdbec5"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/how-to/README.md",
-        "identity": "sha256:ed91a7ef3d68b8029afe7154148841a4669d64a9eac3f6728e1613359499b9af"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/how-to/publish-a-release.md",
-        "identity": "sha256:2d6e7065c3d803a08cca05aaba21eef1ec8cef1a47f7b4a32e706685ad7140fc"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/how-to/run-locally.md",
-        "identity": "sha256:2c0c4fe86c7569bfa2f1c6f90ae2808e8ae4d0dff730835a901a61cf14702c5c"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/how-to/validate-sklauncher.md",
-        "identity": "sha256:e1c0ad5a038d95bfc8b4b3b174922f3125b8fa0e7a8513be4bb6572f2bc4991c"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/README.md",
-        "identity": "sha256:d3b98f9fd1bc1afffe1122e90312de498ff73b8ce92fe5307a16b7794c1ad4a0"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/application-updates.md",
-        "identity": "sha256:4c0cf7103d7c26aa79110cdbf52c3664b48c332db0e704d07cf4d40851e99bf5"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/implementation-status.md",
-        "identity": "sha256:ea6d8ffc6974137cd6800b8f0ed6bd2b449fa4eeca2512b480fe7902668d4af4"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/launcher-validation.md",
-        "identity": "sha256:0d7171f1f1a635d814c19c351eb11af3be7598cf3a5614eda5f1a1e93cd076d5"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/manifest-integration.md",
-        "identity": "sha256:442944b2aec981e5960c18092e2c91fe21971ce6be1aaf1a0f977f84b58a6c89"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/supported-capabilities.md",
-        "identity": "sha256:6d993d98c8b21aa9dcb1affc28ed860e9028c28c86e927e78a8b3db87a2320a2"
-      },
-      {
-        "kind": "absence",
-        "path": "manager/docs/reference/versioning.md",
-        "identity": "sha256:b37fcab823474b29d43c150c0965cd65c577b6db90beceaba251dcd9028347a5"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/explanation/README.md",
-        "identity": "sha256:8d8b1342539302ae28314c76e7387396a878bbc0329af1f23b64fafa7bb15f7f"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/explanation/architecture.md",
-        "identity": "sha256:11410f46f3939530b511be3901fc55fa0f0d87563ad4eb119248301831aabf05"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/explanation/publication-model.md",
-        "identity": "sha256:deccff3e9e7bd3b3333bda8bff8eb4240784fd922446a97c70796b45fdbbe067"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/explanation/setup-compliance.md",
-        "identity": "sha256:b1e14a21b053176eb033e66836c8dc1012da2086a41c0753ef5e85c3f9267abc"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/how-to/README.md",
-        "identity": "sha256:d246e521887e0c3d3dc3198576298aa552c0e470f1402ab3cbc5a304ecfe4a6a"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/how-to/configure-login-gate.md",
-        "identity": "sha256:41db0aa22a67cbf116210a15589c80fa09f44443954d4eadea98121d105baece"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/how-to/configure-reverse-proxy.md",
-        "identity": "sha256:c5f90480f6187c6e45c8f4f6c084d075d9e86bb3130a0112a82fe4474cc85f2a"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/how-to/publish-a-release.md",
-        "identity": "sha256:92a1d3ce10bd78f1e8e774d77f7bec44f48a2664d4cfac5c909a0dd6d699aa5d"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/reference/README.md",
-        "identity": "sha256:94fb5655e8b13dfdd2743f0c6c1b13aadb3ca23f975f2b638d161273250d71fb"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/reference/commands-and-permissions.md",
-        "identity": "sha256:2ffabd3779ce5882e7ef971f3f84ea38693a077717bf5d681c233bc2240763c7"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/reference/configuration.md",
-        "identity": "sha256:3ee23ed8fa078fc1dfe50dad6ecf818895a2e1e855efb19fe994f92468217167"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/reference/versioning.md",
-        "identity": "sha256:5d348c7a7b95637973ccdef334dbbd35392470a1344f53d1c9a0fc63d6ed62ef"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/tutorials/README.md",
-        "identity": "sha256:89b4cb85b5928cfbd74ba3caf330093a923fa65b7c14ea1129aa1fbf30bff928"
-      },
-      {
-        "kind": "absence",
-        "path": "publisher/docs/tutorials/publish-your-first-setup.md",
-        "identity": "sha256:b3c7d142c9451b437f457622e3937467c2d497bd18daecf7af9efbd6134d4e0c"
-      }
-    ],
+    "absence": [],
     "named": {
       "targets": {
         "docs/README.md": {
@@ -3010,7 +2570,7 @@
         },
         "docs/development/README.md": {
           "type": "file",
-          "sha256": "0acf615cc3f1845578be69237cc4d6a4a19f8797cbc1545dbc2c8a394c261075",
+          "sha256": "4f5afc447e6dc18a29cb44ea2ba1d71be4f9c9effc10674de1044d95619fb2cf",
           "executable": false
         },
         "docs/development/component-releases.md": {
@@ -3069,7 +2629,9 @@
           "executable": false
         },
         "docs/development/verify-agent-sandbox.sh": {
-          "type": "missing"
+          "type": "file",
+          "sha256": "8342e7f91e603c13d572435f62f476a0f640fac57bbc15c35e1ed3298a63f1e9",
+          "executable": true
         },
         "docs/usage/README.md": {
           "type": "file",
@@ -3121,15 +2683,6 @@
           "sha256": "314eed5408b9734ddf27a524b712021aaa4e284f3bc27f9434f420880f6ae798",
           "executable": false
         },
-        "manager/docs/decisions/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/decisions/signed-application-update-channel.md": {
-          "type": "missing"
-        },
-        "manager/docs/decisions/verified-launcher-profile-formats.md": {
-          "type": "missing"
-        },
         "manager/docs/development/README.md": {
           "type": "file",
           "sha256": "c5e2dbb475440587ddb24c0e34f0a6f6d13413187b15f105d35f6217591454de",
@@ -3170,48 +2723,6 @@
           "sha256": "693483033915b4285d0d0a4b376503f906b40c1ed148e0b573405806d517418e",
           "executable": false
         },
-        "manager/docs/explanation/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/explanation/architecture.md": {
-          "type": "missing"
-        },
-        "manager/docs/explanation/safety-model.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/publish-a-release.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/run-locally.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/validate-sklauncher.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/application-updates.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/implementation-status.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/launcher-validation.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/manifest-integration.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/supported-capabilities.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/versioning.md": {
-          "type": "missing"
-        },
         "manager/docs/usage/README.md": {
           "type": "file",
           "sha256": "c07d7893e085affe86b37c2781d09c9d424c2b448e1c4e9bc1c01faf245f82f0",
@@ -3234,7 +2745,7 @@
         },
         "manager/docs/usage/reference/launcher-validation.md": {
           "type": "file",
-          "sha256": "41decbb3b0302510b6ac8a2f54b17fa1d1bea6b7ae3c034743ceaa2247e41fcd",
+          "sha256": "4fdc1e1f4313b06632b5266a394ed7d34d644158cdae4bc898a30977afea3033",
           "executable": false
         },
         "manager/docs/usage/reference/manifest-integration.md": {
@@ -3301,48 +2812,6 @@
           "type": "file",
           "sha256": "2f08d65cc6dd60678f1c8efa0d5ae471bbc95bfed677a64df8eff2a8a24850eb",
           "executable": false
-        },
-        "publisher/docs/explanation/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation/architecture.md": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation/publication-model.md": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation/setup-compliance.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/configure-login-gate.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/configure-reverse-proxy.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/publish-a-release.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/commands-and-permissions.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/configuration.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/versioning.md": {
-          "type": "missing"
-        },
-        "publisher/docs/tutorials/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/tutorials/publish-your-first-setup.md": {
-          "type": "missing"
         },
         "publisher/docs/usage/README.md": {
           "type": "file",
@@ -3559,6 +3028,14 @@
             "reason": "A file under the documentation root `docs`.",
             "evidence": [
               "docs/development/templates/tutorial.template.md"
+            ]
+          },
+          {
+            "path": "docs/development/verify-agent-sandbox.sh",
+            "decision": "include",
+            "reason": "A file under the documentation root `docs`.",
+            "evidence": [
+              "docs/development/verify-agent-sandbox.sh"
             ]
           },
           {
@@ -4520,7 +3997,7 @@
         },
         "docs/development/README.md": {
           "type": "file",
-          "sha256": "0acf615cc3f1845578be69237cc4d6a4a19f8797cbc1545dbc2c8a394c261075",
+          "sha256": "4f5afc447e6dc18a29cb44ea2ba1d71be4f9c9effc10674de1044d95619fb2cf",
           "executable": false
         },
         "docs/development/component-releases.md": {
@@ -4577,6 +4054,11 @@
           "type": "file",
           "sha256": "248aaeb4ed190a3b6254831a7978942d4ed4dc4ad3e239a19810d263a662103a",
           "executable": false
+        },
+        "docs/development/verify-agent-sandbox.sh": {
+          "type": "file",
+          "sha256": "8342e7f91e603c13d572435f62f476a0f640fac57bbc15c35e1ed3298a63f1e9",
+          "executable": true
         },
         "docs/usage/README.md": {
           "type": "file",
@@ -4653,15 +4135,6 @@
           "sha256": "314eed5408b9734ddf27a524b712021aaa4e284f3bc27f9434f420880f6ae798",
           "executable": false
         },
-        "manager/docs/decisions/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/decisions/signed-application-update-channel.md": {
-          "type": "missing"
-        },
-        "manager/docs/decisions/verified-launcher-profile-formats.md": {
-          "type": "missing"
-        },
         "manager/docs/development/README.md": {
           "type": "file",
           "sha256": "c5e2dbb475440587ddb24c0e34f0a6f6d13413187b15f105d35f6217591454de",
@@ -4702,48 +4175,6 @@
           "sha256": "693483033915b4285d0d0a4b376503f906b40c1ed148e0b573405806d517418e",
           "executable": false
         },
-        "manager/docs/explanation/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/explanation/architecture.md": {
-          "type": "missing"
-        },
-        "manager/docs/explanation/safety-model.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/publish-a-release.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/run-locally.md": {
-          "type": "missing"
-        },
-        "manager/docs/how-to/validate-sklauncher.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/README.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/application-updates.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/implementation-status.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/launcher-validation.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/manifest-integration.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/supported-capabilities.md": {
-          "type": "missing"
-        },
-        "manager/docs/reference/versioning.md": {
-          "type": "missing"
-        },
         "manager/docs/usage/README.md": {
           "type": "file",
           "sha256": "c07d7893e085affe86b37c2781d09c9d424c2b448e1c4e9bc1c01faf245f82f0",
@@ -4766,7 +4197,7 @@
         },
         "manager/docs/usage/reference/launcher-validation.md": {
           "type": "file",
-          "sha256": "41decbb3b0302510b6ac8a2f54b17fa1d1bea6b7ae3c034743ceaa2247e41fcd",
+          "sha256": "4fdc1e1f4313b06632b5266a394ed7d34d644158cdae4bc898a30977afea3033",
           "executable": false
         },
         "manager/docs/usage/reference/manifest-integration.md": {
@@ -5711,7 +5142,7 @@
         },
         "protocol/package-lock.json": {
           "type": "file",
-          "sha256": "5695383e2b4c7978f23db19ac316b65a2c8b77920c5a61d8ab59c382dcbf6029",
+          "sha256": "8cc0ca8331a7eddc4d2537992eec674f743cacf4c0d764c8778609ffdb0e536c",
           "executable": false
         },
         "protocol/package.json": {
@@ -5853,48 +5284,6 @@
           "type": "file",
           "sha256": "2f08d65cc6dd60678f1c8efa0d5ae471bbc95bfed677a64df8eff2a8a24850eb",
           "executable": false
-        },
-        "publisher/docs/explanation/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation/architecture.md": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation/publication-model.md": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation/setup-compliance.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/configure-login-gate.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/configure-reverse-proxy.md": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to/publish-a-release.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/commands-and-permissions.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/configuration.md": {
-          "type": "missing"
-        },
-        "publisher/docs/reference/versioning.md": {
-          "type": "missing"
-        },
-        "publisher/docs/tutorials/README.md": {
-          "type": "missing"
-        },
-        "publisher/docs/tutorials/publish-your-first-setup.md": {
-          "type": "missing"
         },
         "publisher/docs/usage/README.md": {
           "type": "file",
@@ -6706,7 +6095,8 @@
           "docs/development/component-releases.md",
           "docs/development/how-to",
           "docs/development/import-history.md",
-          "docs/development/templates"
+          "docs/development/templates",
+          "docs/development/verify-agent-sandbox.sh"
         ],
         "docs/development/how-to": [
           "docs/development/how-to/README.md",
@@ -7892,30 +7282,6 @@
         },
         "vendor/postern": {
           "type": "directory"
-        },
-        "manager/docs/decisions": {
-          "type": "missing"
-        },
-        "manager/docs/explanation": {
-          "type": "missing"
-        },
-        "manager/docs/how-to": {
-          "type": "missing"
-        },
-        "manager/docs/reference": {
-          "type": "missing"
-        },
-        "publisher/docs/explanation": {
-          "type": "missing"
-        },
-        "publisher/docs/how-to": {
-          "type": "missing"
-        },
-        "publisher/docs/reference": {
-          "type": "missing"
-        },
-        "publisher/docs/tutorials": {
-          "type": "missing"
         }
       },
       "targets": {},
@@ -8466,27 +7832,11 @@
   "scopeChanges": [
     {
       "id": "documentation",
-      "additions": [
-        "docs/adr/0001-one-repository-per-project.md",
-        "docs/adr/README.md",
-        "docs/development/component-releases.md",
-        "docs/development/import-history.md",
-        "docs/development/verify-agent-sandbox.sh",
-        "manager/docs/README.md",
-        "manager/docs/adr/README.md",
-        "manager/docs/adr/signed-application-update-channel.md",
-        "manager/docs/adr/verified-launcher-profile-formats.md",
+      "additions": [],
+      "removals": [
         "manager/docs/decisions/README.md",
         "manager/docs/decisions/signed-application-update-channel.md",
         "manager/docs/decisions/verified-launcher-profile-formats.md",
-        "manager/docs/development/README.md",
-        "manager/docs/development/explanation/README.md",
-        "manager/docs/development/explanation/architecture.md",
-        "manager/docs/development/explanation/safety-model.md",
-        "manager/docs/development/how-to/README.md",
-        "manager/docs/development/how-to/publish-a-release.md",
-        "manager/docs/development/how-to/run-locally.md",
-        "manager/docs/development/how-to/validate-sklauncher.md",
         "manager/docs/explanation/README.md",
         "manager/docs/explanation/architecture.md",
         "manager/docs/explanation/safety-model.md",
@@ -8501,22 +7851,6 @@
         "manager/docs/reference/manifest-integration.md",
         "manager/docs/reference/supported-capabilities.md",
         "manager/docs/reference/versioning.md",
-        "manager/docs/usage/README.md",
-        "manager/docs/usage/reference/README.md",
-        "manager/docs/usage/reference/application-updates.md",
-        "manager/docs/usage/reference/implementation-status.md",
-        "manager/docs/usage/reference/launcher-validation.md",
-        "manager/docs/usage/reference/manifest-integration.md",
-        "manager/docs/usage/reference/supported-capabilities.md",
-        "manager/docs/usage/reference/versioning.md",
-        "publisher/docs/README.md",
-        "publisher/docs/development/README.md",
-        "publisher/docs/development/explanation/README.md",
-        "publisher/docs/development/explanation/architecture.md",
-        "publisher/docs/development/explanation/publication-model.md",
-        "publisher/docs/development/explanation/setup-compliance.md",
-        "publisher/docs/development/how-to/README.md",
-        "publisher/docs/development/how-to/publish-a-release.md",
         "publisher/docs/explanation/README.md",
         "publisher/docs/explanation/architecture.md",
         "publisher/docs/explanation/publication-model.md",
@@ -8530,43 +7864,7 @@
         "publisher/docs/reference/configuration.md",
         "publisher/docs/reference/versioning.md",
         "publisher/docs/tutorials/README.md",
-        "publisher/docs/tutorials/publish-your-first-setup.md",
-        "publisher/docs/usage/README.md",
-        "publisher/docs/usage/how-to/README.md",
-        "publisher/docs/usage/how-to/configure-login-gate.md",
-        "publisher/docs/usage/how-to/configure-reverse-proxy.md",
-        "publisher/docs/usage/reference/README.md",
-        "publisher/docs/usage/reference/commands-and-permissions.md",
-        "publisher/docs/usage/reference/configuration.md",
-        "publisher/docs/usage/reference/versioning.md",
-        "publisher/docs/usage/tutorials/README.md",
-        "publisher/docs/usage/tutorials/publish-your-first-setup.md"
-      ],
-      "removals": [
-        "docs/_templates/README.md",
-        "docs/_templates/decision.template.md",
-        "docs/_templates/explanation.template.md",
-        "docs/_templates/how-to.template.md",
-        "docs/_templates/index.template.md",
-        "docs/_templates/reference.template.md",
-        "docs/_templates/tutorial.template.md",
-        "docs/explanation/README.md",
-        "docs/explanation/protocol-design.md",
-        "docs/how-to/README.md",
-        "docs/how-to/run-conformance-suite.md",
-        "docs/reference/README.md",
-        "docs/reference/versioning.md"
-      ]
-    },
-    {
-      "id": "project-readmes",
-      "additions": [
-        "manager/README.md",
-        "protocol/README.md",
-        "publisher/README.md"
-      ],
-      "removals": [
-        "spec/README.md"
+        "publisher/docs/tutorials/publish-your-first-setup.md"
       ]
     }
   ]

@@ -2,46 +2,6 @@
   "format": "repo-standards/state/v8",
   "observations": [
     {
-      "phase": "fixes",
-      "scope": {
-        "github-repository-configuration": {
-          "paths": [],
-          "directories": []
-        }
-      },
-      "operation": {
-        "phase": "fixes",
-        "declaration": "github-repository-configuration",
-        "id": "canonical-labels"
-      },
-      "operationIndex": 0,
-      "before": "sha256:0e866b3c6e67399647b1de131e8b7e3a4df4e382b245fdbac7410049bf9e7342",
-      "after": "sha256:0e866b3c6e67399647b1de131e8b7e3a4df4e382b245fdbac7410049bf9e7342",
-      "changes": {},
-      "boundaryChanges": {},
-      "violations": []
-    },
-    {
-      "phase": "fixes",
-      "scope": {
-        "github-repository-configuration": {
-          "paths": [],
-          "directories": []
-        }
-      },
-      "operation": {
-        "phase": "fixes",
-        "declaration": "github-repository-configuration",
-        "id": "pull-request-integration"
-      },
-      "operationIndex": 1,
-      "before": "sha256:0e866b3c6e67399647b1de131e8b7e3a4df4e382b245fdbac7410049bf9e7342",
-      "after": "sha256:0e866b3c6e67399647b1de131e8b7e3a4df4e382b245fdbac7410049bf9e7342",
-      "changes": {},
-      "boundaryChanges": {},
-      "violations": []
-    },
-    {
       "phase": "agent",
       "scope": {
         "comments": {
@@ -75,9 +35,6 @@
             "manager/docs/adr/README.md",
             "manager/docs/adr/signed-application-update-channel.md",
             "manager/docs/adr/verified-launcher-profile-formats.md",
-            "manager/docs/decisions/README.md",
-            "manager/docs/decisions/signed-application-update-channel.md",
-            "manager/docs/decisions/verified-launcher-profile-formats.md",
             "manager/docs/development/README.md",
             "manager/docs/development/explanation/README.md",
             "manager/docs/development/explanation/architecture.md",
@@ -86,20 +43,6 @@
             "manager/docs/development/how-to/publish-a-release.md",
             "manager/docs/development/how-to/run-locally.md",
             "manager/docs/development/how-to/validate-sklauncher.md",
-            "manager/docs/explanation/README.md",
-            "manager/docs/explanation/architecture.md",
-            "manager/docs/explanation/safety-model.md",
-            "manager/docs/how-to/README.md",
-            "manager/docs/how-to/publish-a-release.md",
-            "manager/docs/how-to/run-locally.md",
-            "manager/docs/how-to/validate-sklauncher.md",
-            "manager/docs/reference/README.md",
-            "manager/docs/reference/application-updates.md",
-            "manager/docs/reference/implementation-status.md",
-            "manager/docs/reference/launcher-validation.md",
-            "manager/docs/reference/manifest-integration.md",
-            "manager/docs/reference/supported-capabilities.md",
-            "manager/docs/reference/versioning.md",
             "manager/docs/usage/README.md",
             "manager/docs/usage/reference/README.md",
             "manager/docs/usage/reference/application-updates.md",
@@ -116,20 +59,6 @@
             "publisher/docs/development/explanation/setup-compliance.md",
             "publisher/docs/development/how-to/README.md",
             "publisher/docs/development/how-to/publish-a-release.md",
-            "publisher/docs/explanation/README.md",
-            "publisher/docs/explanation/architecture.md",
-            "publisher/docs/explanation/publication-model.md",
-            "publisher/docs/explanation/setup-compliance.md",
-            "publisher/docs/how-to/README.md",
-            "publisher/docs/how-to/configure-login-gate.md",
-            "publisher/docs/how-to/configure-reverse-proxy.md",
-            "publisher/docs/how-to/publish-a-release.md",
-            "publisher/docs/reference/README.md",
-            "publisher/docs/reference/commands-and-permissions.md",
-            "publisher/docs/reference/configuration.md",
-            "publisher/docs/reference/versioning.md",
-            "publisher/docs/tutorials/README.md",
-            "publisher/docs/tutorials/publish-your-first-setup.md",
             "publisher/docs/usage/README.md",
             "publisher/docs/usage/how-to/README.md",
             "publisher/docs/usage/how-to/configure-login-gate.md",
@@ -202,32 +131,9 @@
           "directories": []
         }
       },
-      "before": "sha256:0e866b3c6e67399647b1de131e8b7e3a4df4e382b245fdbac7410049bf9e7342",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "changes": {
-        "docs/development/README.md": {
-          "before": {
-            "type": "file",
-            "sha256": "0acf615cc3f1845578be69237cc4d6a4a19f8797cbc1545dbc2c8a394c261075",
-            "executable": false
-          },
-          "after": {
-            "type": "file",
-            "sha256": "4f5afc447e6dc18a29cb44ea2ba1d71be4f9c9effc10674de1044d95619fb2cf",
-            "executable": false
-          }
-        },
-        "docs/development/verify-agent-sandbox.sh": {
-          "before": {
-            "type": "missing"
-          },
-          "after": {
-            "type": "file",
-            "sha256": "8342e7f91e603c13d572435f62f476a0f640fac57bbc15c35e1ed3298a63f1e9",
-            "executable": true
-          }
-        }
-      },
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "changes": {},
       "boundaryChanges": {},
       "violations": []
     },
@@ -265,9 +171,6 @@
             "manager/docs/adr/README.md",
             "manager/docs/adr/signed-application-update-channel.md",
             "manager/docs/adr/verified-launcher-profile-formats.md",
-            "manager/docs/decisions/README.md",
-            "manager/docs/decisions/signed-application-update-channel.md",
-            "manager/docs/decisions/verified-launcher-profile-formats.md",
             "manager/docs/development/README.md",
             "manager/docs/development/explanation/README.md",
             "manager/docs/development/explanation/architecture.md",
@@ -276,20 +179,6 @@
             "manager/docs/development/how-to/publish-a-release.md",
             "manager/docs/development/how-to/run-locally.md",
             "manager/docs/development/how-to/validate-sklauncher.md",
-            "manager/docs/explanation/README.md",
-            "manager/docs/explanation/architecture.md",
-            "manager/docs/explanation/safety-model.md",
-            "manager/docs/how-to/README.md",
-            "manager/docs/how-to/publish-a-release.md",
-            "manager/docs/how-to/run-locally.md",
-            "manager/docs/how-to/validate-sklauncher.md",
-            "manager/docs/reference/README.md",
-            "manager/docs/reference/application-updates.md",
-            "manager/docs/reference/implementation-status.md",
-            "manager/docs/reference/launcher-validation.md",
-            "manager/docs/reference/manifest-integration.md",
-            "manager/docs/reference/supported-capabilities.md",
-            "manager/docs/reference/versioning.md",
             "manager/docs/usage/README.md",
             "manager/docs/usage/reference/README.md",
             "manager/docs/usage/reference/application-updates.md",
@@ -306,20 +195,6 @@
             "publisher/docs/development/explanation/setup-compliance.md",
             "publisher/docs/development/how-to/README.md",
             "publisher/docs/development/how-to/publish-a-release.md",
-            "publisher/docs/explanation/README.md",
-            "publisher/docs/explanation/architecture.md",
-            "publisher/docs/explanation/publication-model.md",
-            "publisher/docs/explanation/setup-compliance.md",
-            "publisher/docs/how-to/README.md",
-            "publisher/docs/how-to/configure-login-gate.md",
-            "publisher/docs/how-to/configure-reverse-proxy.md",
-            "publisher/docs/how-to/publish-a-release.md",
-            "publisher/docs/reference/README.md",
-            "publisher/docs/reference/commands-and-permissions.md",
-            "publisher/docs/reference/configuration.md",
-            "publisher/docs/reference/versioning.md",
-            "publisher/docs/tutorials/README.md",
-            "publisher/docs/tutorials/publish-your-first-setup.md",
             "publisher/docs/usage/README.md",
             "publisher/docs/usage/how-to/README.md",
             "publisher/docs/usage/how-to/configure-login-gate.md",
@@ -392,8 +267,8 @@
           "directories": []
         }
       },
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -428,9 +303,6 @@
             "manager/docs/adr/README.md",
             "manager/docs/adr/signed-application-update-channel.md",
             "manager/docs/adr/verified-launcher-profile-formats.md",
-            "manager/docs/decisions/README.md",
-            "manager/docs/decisions/signed-application-update-channel.md",
-            "manager/docs/decisions/verified-launcher-profile-formats.md",
             "manager/docs/development/README.md",
             "manager/docs/development/explanation/README.md",
             "manager/docs/development/explanation/architecture.md",
@@ -439,20 +311,6 @@
             "manager/docs/development/how-to/publish-a-release.md",
             "manager/docs/development/how-to/run-locally.md",
             "manager/docs/development/how-to/validate-sklauncher.md",
-            "manager/docs/explanation/README.md",
-            "manager/docs/explanation/architecture.md",
-            "manager/docs/explanation/safety-model.md",
-            "manager/docs/how-to/README.md",
-            "manager/docs/how-to/publish-a-release.md",
-            "manager/docs/how-to/run-locally.md",
-            "manager/docs/how-to/validate-sklauncher.md",
-            "manager/docs/reference/README.md",
-            "manager/docs/reference/application-updates.md",
-            "manager/docs/reference/implementation-status.md",
-            "manager/docs/reference/launcher-validation.md",
-            "manager/docs/reference/manifest-integration.md",
-            "manager/docs/reference/supported-capabilities.md",
-            "manager/docs/reference/versioning.md",
             "manager/docs/usage/README.md",
             "manager/docs/usage/reference/README.md",
             "manager/docs/usage/reference/application-updates.md",
@@ -469,20 +327,6 @@
             "publisher/docs/development/explanation/setup-compliance.md",
             "publisher/docs/development/how-to/README.md",
             "publisher/docs/development/how-to/publish-a-release.md",
-            "publisher/docs/explanation/README.md",
-            "publisher/docs/explanation/architecture.md",
-            "publisher/docs/explanation/publication-model.md",
-            "publisher/docs/explanation/setup-compliance.md",
-            "publisher/docs/how-to/README.md",
-            "publisher/docs/how-to/configure-login-gate.md",
-            "publisher/docs/how-to/configure-reverse-proxy.md",
-            "publisher/docs/how-to/publish-a-release.md",
-            "publisher/docs/reference/README.md",
-            "publisher/docs/reference/commands-and-permissions.md",
-            "publisher/docs/reference/configuration.md",
-            "publisher/docs/reference/versioning.md",
-            "publisher/docs/tutorials/README.md",
-            "publisher/docs/tutorials/publish-your-first-setup.md",
             "publisher/docs/usage/README.md",
             "publisher/docs/usage/how-to/README.md",
             "publisher/docs/usage/how-to/configure-login-gate.md",
@@ -502,9 +346,9 @@
         "declaration": "documentation",
         "id": "documentation-navigation"
       },
-      "operationIndex": 2,
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "operationIndex": 0,
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -522,9 +366,9 @@
         "declaration": "factory-workflow",
         "id": "factory-model-policy"
       },
-      "operationIndex": 3,
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "operationIndex": 1,
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -542,9 +386,9 @@
         "declaration": "github-repository-configuration",
         "id": "pull-request-reviewer"
       },
-      "operationIndex": 4,
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "operationIndex": 2,
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -562,9 +406,9 @@
         "declaration": "github-repository-configuration",
         "id": "factory-review-policy"
       },
-      "operationIndex": 5,
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "operationIndex": 3,
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -586,9 +430,9 @@
         "declaration": "project-readmes",
         "id": "project-readme-structure"
       },
-      "operationIndex": 6,
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "operationIndex": 4,
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -608,9 +452,9 @@
         "declaration": "repository-readme",
         "id": "repository-readme-structure"
       },
-      "operationIndex": 7,
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "operationIndex": 5,
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
@@ -649,9 +493,6 @@
             "manager/docs/adr/README.md",
             "manager/docs/adr/signed-application-update-channel.md",
             "manager/docs/adr/verified-launcher-profile-formats.md",
-            "manager/docs/decisions/README.md",
-            "manager/docs/decisions/signed-application-update-channel.md",
-            "manager/docs/decisions/verified-launcher-profile-formats.md",
             "manager/docs/development/README.md",
             "manager/docs/development/explanation/README.md",
             "manager/docs/development/explanation/architecture.md",
@@ -660,20 +501,6 @@
             "manager/docs/development/how-to/publish-a-release.md",
             "manager/docs/development/how-to/run-locally.md",
             "manager/docs/development/how-to/validate-sklauncher.md",
-            "manager/docs/explanation/README.md",
-            "manager/docs/explanation/architecture.md",
-            "manager/docs/explanation/safety-model.md",
-            "manager/docs/how-to/README.md",
-            "manager/docs/how-to/publish-a-release.md",
-            "manager/docs/how-to/run-locally.md",
-            "manager/docs/how-to/validate-sklauncher.md",
-            "manager/docs/reference/README.md",
-            "manager/docs/reference/application-updates.md",
-            "manager/docs/reference/implementation-status.md",
-            "manager/docs/reference/launcher-validation.md",
-            "manager/docs/reference/manifest-integration.md",
-            "manager/docs/reference/supported-capabilities.md",
-            "manager/docs/reference/versioning.md",
             "manager/docs/usage/README.md",
             "manager/docs/usage/reference/README.md",
             "manager/docs/usage/reference/application-updates.md",
@@ -690,20 +517,6 @@
             "publisher/docs/development/explanation/setup-compliance.md",
             "publisher/docs/development/how-to/README.md",
             "publisher/docs/development/how-to/publish-a-release.md",
-            "publisher/docs/explanation/README.md",
-            "publisher/docs/explanation/architecture.md",
-            "publisher/docs/explanation/publication-model.md",
-            "publisher/docs/explanation/setup-compliance.md",
-            "publisher/docs/how-to/README.md",
-            "publisher/docs/how-to/configure-login-gate.md",
-            "publisher/docs/how-to/configure-reverse-proxy.md",
-            "publisher/docs/how-to/publish-a-release.md",
-            "publisher/docs/reference/README.md",
-            "publisher/docs/reference/commands-and-permissions.md",
-            "publisher/docs/reference/configuration.md",
-            "publisher/docs/reference/versioning.md",
-            "publisher/docs/tutorials/README.md",
-            "publisher/docs/tutorials/publish-your-first-setup.md",
             "publisher/docs/usage/README.md",
             "publisher/docs/usage/how-to/README.md",
             "publisher/docs/usage/how-to/configure-login-gate.md",
@@ -776,56 +589,14 @@
           "directories": []
         }
       },
-      "before": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
-      "after": "sha256:504e9f00aa8d0e186a5880a5e2666c604bdf1f72ecb605a094a442a68426817e",
+      "before": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
+      "after": "sha256:47d06f4265f8327ec7b80e6ae2cd0d3b9df37c2017125377bbc074a41cc18056",
       "changes": {},
       "boundaryChanges": {},
       "violations": []
     }
   ],
   "operations": [
-    {
-      "operation": {
-        "declaration": "github-repository-configuration",
-        "phase": "fixes",
-        "id": "canonical-labels"
-      },
-      "process": {
-        "exitCode": 0,
-        "signal": null,
-        "error": null,
-        "timedOut": false
-      },
-      "result": {
-        "format": "repo-standards/result/v2",
-        "status": "confirmation-required",
-        "message": "GitHub label setup requires confirmation: label factory:skip.color is \"ededed\"; the standard sets \"c5def5\"; label factory:skip.description is \"\"; the standard sets \"Ready agent work the factory must not pick up\". No changes were made."
-      },
-      "error": null,
-      "stdout": ".repo-standards/local/operations/0.stdout",
-      "stderr": ".repo-standards/local/operations/0.stderr"
-    },
-    {
-      "operation": {
-        "declaration": "github-repository-configuration",
-        "phase": "fixes",
-        "id": "pull-request-integration"
-      },
-      "process": {
-        "exitCode": 0,
-        "signal": null,
-        "error": null,
-        "timedOut": false
-      },
-      "result": {
-        "format": "repo-standards/result/v2",
-        "status": "unchanged",
-        "message": "GitHub PR integration already matches the canonical configuration for lutzseverino/minecraft-setup."
-      },
-      "error": null,
-      "stdout": ".repo-standards/local/operations/1.stdout",
-      "stderr": ".repo-standards/local/operations/1.stderr"
-    },
     {
       "operation": {
         "declaration": "documentation",
@@ -844,8 +615,8 @@
         "message": "Documentation navigation is valid; content placement and usefulness still require maintainer or agent review."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/2.stdout",
-      "stderr": ".repo-standards/local/operations/2.stderr"
+      "stdout": ".repo-standards/local/operations/0.stdout",
+      "stderr": ".repo-standards/local/operations/0.stderr"
     },
     {
       "operation": {
@@ -865,8 +636,8 @@
         "message": "No factory model policy is configured."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/3.stdout",
-      "stderr": ".repo-standards/local/operations/3.stderr"
+      "stdout": ".repo-standards/local/operations/1.stdout",
+      "stderr": ".repo-standards/local/operations/1.stderr"
     },
     {
       "operation": {
@@ -886,8 +657,8 @@
         "message": "No pull request reviewer is configured."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/4.stdout",
-      "stderr": ".repo-standards/local/operations/4.stderr"
+      "stdout": ".repo-standards/local/operations/2.stdout",
+      "stderr": ".repo-standards/local/operations/2.stderr"
     },
     {
       "operation": {
@@ -907,8 +678,8 @@
         "message": "No factory review policy is configured."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/5.stdout",
-      "stderr": ".repo-standards/local/operations/5.stderr"
+      "stdout": ".repo-standards/local/operations/3.stdout",
+      "stderr": ".repo-standards/local/operations/3.stderr"
     },
     {
       "operation": {
@@ -928,8 +699,8 @@
         "message": "Project README structure and shared setup and contribution links are valid for 3 concrete targets; Project membership, purpose, commands, configuration, documentation, and duplication of shared instructions still require maintainer or agent review."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/6.stdout",
-      "stderr": ".repo-standards/local/operations/6.stderr"
+      "stdout": ".repo-standards/local/operations/4.stdout",
+      "stderr": ".repo-standards/local/operations/4.stderr"
     },
     {
       "operation": {
@@ -949,816 +720,17 @@
         "message": "Repository README structure is valid; factual content still requires maintainer or agent review."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/7.stdout",
-      "stderr": ".repo-standards/local/operations/7.stderr"
+      "stdout": ".repo-standards/local/operations/5.stdout",
+      "stderr": ".repo-standards/local/operations/5.stderr"
     }
   ],
   "retryHistory": [],
-  "changeSet": [
-    {
-      "path": ".agents/skills/babysit/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/merge.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/platform.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/pull-request-reviewer.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/review-outcome.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/trusted-review-config.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/babysit/wait.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/code-review/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/codebase-design/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/diagnosing-bugs/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/domain-modeling/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/factory/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/grill-with-docs/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/grilling/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/implement/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/implement/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/improve-codebase-architecture/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/orchestrate/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/orchestrate/records.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/orchestrate/references/close.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/orchestrate/references/launches.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/orchestrate/references/templates.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/orchestrate/wait.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/pr/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/pr/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/prototype/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/research/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/research/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/review/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/review/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/review/round.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/tdd/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/to-spec/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/to-spec/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/to-tickets/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/to-tickets/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/triage/AGENT-BRIEF.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/triage/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/triage/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/triage/ready.mjs",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/wayfinder/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/wayfinder/SKILL.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".agents/skills/writing-for-agents/CREDITS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".claude/skills/review",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".factory/Dockerfile",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": ".factory/config.json",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".gitattributes",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/feature-request.yml",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/implementation-ticket.yml",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/specification.yml",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": "AGENTS.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": "CONTRIBUTING.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": "README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "docs/agents/issue-tracker.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": "docs/agents/triage-labels.md",
-      "phases": [
-        "installation"
-      ]
-    },
-    {
-      "path": "docs/development/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "docs/development/component-releases.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "docs/development/verify-agent-sandbox.sh",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/adr/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/adr/signed-application-update-channel.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/adr/verified-launcher-profile-formats.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/decisions/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/decisions/signed-application-update-channel.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/decisions/verified-launcher-profile-formats.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/explanation/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/explanation/architecture.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/explanation/safety-model.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/how-to/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/how-to/publish-a-release.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/how-to/run-locally.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/development/how-to/validate-sklauncher.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/explanation/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/explanation/architecture.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/explanation/safety-model.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/how-to/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/how-to/publish-a-release.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/how-to/run-locally.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/how-to/validate-sklauncher.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/application-updates.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/implementation-status.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/launcher-validation.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/manifest-integration.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/supported-capabilities.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/reference/versioning.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/application-updates.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/implementation-status.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/launcher-validation.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/manifest-integration.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/supported-capabilities.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "manager/docs/usage/reference/versioning.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "protocol/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/explanation/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/explanation/architecture.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/explanation/publication-model.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/explanation/setup-compliance.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/how-to/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/development/how-to/publish-a-release.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/explanation/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/explanation/architecture.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/explanation/publication-model.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/explanation/setup-compliance.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/how-to/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/how-to/configure-login-gate.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/how-to/configure-reverse-proxy.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/how-to/publish-a-release.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/reference/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/reference/commands-and-permissions.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/reference/configuration.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/reference/versioning.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/tutorials/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/tutorials/publish-your-first-setup.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/how-to/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/how-to/configure-login-gate.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/how-to/configure-reverse-proxy.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/reference/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/reference/commands-and-permissions.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/reference/configuration.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/reference/versioning.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/tutorials/README.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "publisher/docs/usage/tutorials/publish-your-first-setup.md",
-      "phases": [
-        "agent"
-      ]
-    },
-    {
-      "path": "scripts/validate-issue-contract.mjs",
-      "phases": [
-        "installation"
-      ]
-    }
-  ],
+  "changeSet": [],
   "lastComplete": {
-    "run": "c5030ca6-1afd-4b29-b766-650abb2e99ce",
-    "inspection": "sha256:75be63281af8ae81e6c1aa8a89344938fd6ee9d8e812ae27e2772afe58fbc311",
-    "completedAt": "2026-11-09T13:57:57.769Z",
-    "head": "f4eecf45a5e810650f106916efb48c1a425a1c52"
+    "run": "ef2a4607-3ff1-485c-817e-d80bb1e88b87",
+    "inspection": "sha256:e80b9d449d328191e7769994b6e9b056ee9d51b30e1ac9f7c22bc13b07ab2aeb",
+    "completedAt": "2026-11-10T18:06:13.253Z",
+    "head": "5e8d160965f1410542c3f56646d094c69fe8851c"
   },
   "baselines": {
     "docs/agents/README.md": {
@@ -2443,8 +1415,8 @@
         "message": "Documentation navigation is valid; content placement and usefulness still require maintainer or agent review."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/2.stdout",
-      "stderr": ".repo-standards/local/operations/2.stderr"
+      "stdout": ".repo-standards/local/operations/0.stdout",
+      "stderr": ".repo-standards/local/operations/0.stderr"
     },
     {
       "operation": {
@@ -2464,8 +1436,8 @@
         "message": "No factory model policy is configured."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/3.stdout",
-      "stderr": ".repo-standards/local/operations/3.stderr"
+      "stdout": ".repo-standards/local/operations/1.stdout",
+      "stderr": ".repo-standards/local/operations/1.stderr"
     },
     {
       "operation": {
@@ -2485,8 +1457,8 @@
         "message": "No pull request reviewer is configured."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/4.stdout",
-      "stderr": ".repo-standards/local/operations/4.stderr"
+      "stdout": ".repo-standards/local/operations/2.stdout",
+      "stderr": ".repo-standards/local/operations/2.stderr"
     },
     {
       "operation": {
@@ -2506,8 +1478,8 @@
         "message": "No factory review policy is configured."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/5.stdout",
-      "stderr": ".repo-standards/local/operations/5.stderr"
+      "stdout": ".repo-standards/local/operations/3.stdout",
+      "stderr": ".repo-standards/local/operations/3.stderr"
     },
     {
       "operation": {
@@ -2527,8 +1499,8 @@
         "message": "Project README structure and shared setup and contribution links are valid for 3 concrete targets; Project membership, purpose, commands, configuration, documentation, and duplication of shared instructions still require maintainer or agent review."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/6.stdout",
-      "stderr": ".repo-standards/local/operations/6.stderr"
+      "stdout": ".repo-standards/local/operations/4.stdout",
+      "stderr": ".repo-standards/local/operations/4.stderr"
     },
     {
       "operation": {
@@ -2548,20 +1520,20 @@
         "message": "Repository README structure is valid; factual content still requires maintainer or agent review."
       },
       "error": null,
-      "stdout": ".repo-standards/local/operations/7.stdout",
-      "stderr": ".repo-standards/local/operations/7.stderr"
+      "stdout": ".repo-standards/local/operations/5.stdout",
+      "stderr": ".repo-standards/local/operations/5.stderr"
     }
   ],
   "assessments": [
     {
       "format": "repo-standards/assessment/v3",
       "scope": {
-        "inspection": "sha256:75be63281af8ae81e6c1aa8a89344938fd6ee9d8e812ae27e2772afe58fbc311",
-        "afterFixes": "sha256:9f852ea8d6a73907171a3f3d212dcfad3538b461701459f5463826b5a242f3ce"
+        "inspection": "sha256:e80b9d449d328191e7769994b6e9b056ee9d51b30e1ac9f7c22bc13b07ab2aeb",
+        "afterFixes": "sha256:cfd3cfe24796d7614be4a92a1e5d627c7cacd598e5c9aa00dcbd5e9073a6122c"
       },
-      "run": "c5030ca6-1afd-4b29-b766-650abb2e99ce",
+      "run": "ef2a4607-3ff1-485c-817e-d80bb1e88b87",
       "selection": "sha256:14e6f72e26ba968bde2b3706631b39930de7b24089371e0600a8da80e519b248",
-      "snapshot": "sha256:da4b4e003d86db63575eda4fa47e7ef3927dacfc2273d34bcf94ce9ad761162f",
+      "snapshot": "sha256:cfd3cfe24796d7614be4a92a1e5d627c7cacd598e5c9aa00dcbd5e9073a6122c",
       "declarations": [
         {
           "id": "comments",
@@ -2599,93 +1571,21 @@
         {
           "id": "documentation",
           "status": "satisfied",
-          "explanation": "Shared guide accurately states combined prerequisites and canonical component checks; component documentation uses usage/development/adr categories with resolving indexes and links, preserving content and normative protocol paths. Owner sandbox procedure is maintained guidance, while run evidence remains on the PR.",
-          "changedPaths": [
-            "docs/development/README.md",
-            "docs/development/component-releases.md",
-            "docs/development/verify-agent-sandbox.sh",
-            "manager/docs/README.md",
-            "manager/docs/adr/README.md",
-            "manager/docs/adr/signed-application-update-channel.md",
-            "manager/docs/adr/verified-launcher-profile-formats.md",
-            "manager/docs/decisions/README.md",
-            "manager/docs/decisions/signed-application-update-channel.md",
-            "manager/docs/decisions/verified-launcher-profile-formats.md",
-            "manager/docs/development/README.md",
-            "manager/docs/development/explanation/README.md",
-            "manager/docs/development/explanation/architecture.md",
-            "manager/docs/development/explanation/safety-model.md",
-            "manager/docs/development/how-to/README.md",
-            "manager/docs/development/how-to/publish-a-release.md",
-            "manager/docs/development/how-to/run-locally.md",
-            "manager/docs/development/how-to/validate-sklauncher.md",
-            "manager/docs/explanation/README.md",
-            "manager/docs/explanation/architecture.md",
-            "manager/docs/explanation/safety-model.md",
-            "manager/docs/how-to/README.md",
-            "manager/docs/how-to/publish-a-release.md",
-            "manager/docs/how-to/run-locally.md",
-            "manager/docs/how-to/validate-sklauncher.md",
-            "manager/docs/reference/README.md",
-            "manager/docs/reference/application-updates.md",
-            "manager/docs/reference/implementation-status.md",
-            "manager/docs/reference/launcher-validation.md",
-            "manager/docs/reference/manifest-integration.md",
-            "manager/docs/reference/supported-capabilities.md",
-            "manager/docs/reference/versioning.md",
-            "manager/docs/usage/README.md",
-            "manager/docs/usage/reference/README.md",
-            "manager/docs/usage/reference/application-updates.md",
-            "manager/docs/usage/reference/implementation-status.md",
-            "manager/docs/usage/reference/launcher-validation.md",
-            "manager/docs/usage/reference/manifest-integration.md",
-            "manager/docs/usage/reference/supported-capabilities.md",
-            "manager/docs/usage/reference/versioning.md",
-            "publisher/docs/README.md",
-            "publisher/docs/development/README.md",
-            "publisher/docs/development/explanation/README.md",
-            "publisher/docs/development/explanation/architecture.md",
-            "publisher/docs/development/explanation/publication-model.md",
-            "publisher/docs/development/explanation/setup-compliance.md",
-            "publisher/docs/development/how-to/README.md",
-            "publisher/docs/development/how-to/publish-a-release.md",
-            "publisher/docs/explanation/README.md",
-            "publisher/docs/explanation/architecture.md",
-            "publisher/docs/explanation/publication-model.md",
-            "publisher/docs/explanation/setup-compliance.md",
-            "publisher/docs/how-to/README.md",
-            "publisher/docs/how-to/configure-login-gate.md",
-            "publisher/docs/how-to/configure-reverse-proxy.md",
-            "publisher/docs/how-to/publish-a-release.md",
-            "publisher/docs/reference/README.md",
-            "publisher/docs/reference/commands-and-permissions.md",
-            "publisher/docs/reference/configuration.md",
-            "publisher/docs/reference/versioning.md",
-            "publisher/docs/tutorials/README.md",
-            "publisher/docs/tutorials/publish-your-first-setup.md",
-            "publisher/docs/usage/README.md",
-            "publisher/docs/usage/how-to/README.md",
-            "publisher/docs/usage/how-to/configure-login-gate.md",
-            "publisher/docs/usage/how-to/configure-reverse-proxy.md",
-            "publisher/docs/usage/reference/README.md",
-            "publisher/docs/usage/reference/commands-and-permissions.md",
-            "publisher/docs/usage/reference/configuration.md",
-            "publisher/docs/usage/reference/versioning.md",
-            "publisher/docs/usage/tutorials/README.md",
-            "publisher/docs/usage/tutorials/publish-your-first-setup.md"
-          ],
+          "explanation": "The current scope covers all 59 maintained files in docs/, manager/docs/ and publisher/docs/, retaining the prior roots and maintained move destinations while retiring 31 absent sources. Category indexes and local links retain their existing content. Shared setup and validation guidance preserves component toolchains; normative protocol/spec/ remains excluded and other declarations retain ownership. No documentation content edit is needed.",
+          "changedPaths": [],
           "evidence": [
             "docs/README.md",
             "docs/development/README.md",
             "docs/development/verify-agent-sandbox.sh",
             "manager/docs/README.md",
             "publisher/docs/README.md",
-            "protocol/spec/README.md"
+            "protocol/spec/README.md",
+            "https://github.com/lutzseverino/minecraft-setup/issues/45#issuecomment-6757771982"
           ],
           "scopeValidity": {
             "afterFixes": {
               "status": "valid",
-              "explanation": "All maintained docs in three documentation roots and their moved destinations/indexes are covered. Normative protocol files remain excluded and component README paths belong to project-readmes. The owner verification procedure is now explicitly covered.",
+              "explanation": "Compared the fresh draft and previous confirmed scope with the tracked tree: all 59 included files and all candidate/evidence references exist; 31 absent move sources are retired, maintained destinations remain, and normative protocol and exact/project-README ownership exclusions are preserved.",
               "evidence": [
                 "docs/README.md",
                 "docs/development/README.md",
@@ -2698,7 +1598,7 @@
             },
             "current": {
               "status": "valid",
-              "explanation": "All maintained docs in three documentation roots and their moved destinations/indexes are covered. Normative protocol files remain excluded and component README paths belong to project-readmes. The owner verification procedure is now explicitly covered.",
+              "explanation": "Compared the fresh draft and previous confirmed scope with the tracked tree: all 59 included files and all candidate/evidence references exist; 31 absent move sources are retired, maintained destinations remain, and normative protocol and exact/project-README ownership exclusions are preserved.",
               "evidence": [
                 "docs/README.md",
                 "docs/development/README.md",
@@ -2715,9 +1615,7 @@
           "id": "factory-sandbox-image",
           "status": "satisfied",
           "explanation": "Contextless Debian Node24 image supplies npm11.6.2, JDK21/Java17 target prerequisites, Maven-wrapper download prerequisites, stable system-wide Rust/rustfmt/Clippy and Linux Tauri libraries. No agent user/tooling/entrypoint or repo dependencies installed. Actual sandbox build and checks remain separate owner evidence; no result claimed.",
-          "changedPaths": [
-            ".factory/Dockerfile"
-          ],
+          "changedPaths": [],
           "evidence": [
             ".factory/Dockerfile",
             "docs/development/README.md",
@@ -2727,11 +1625,12 @@
         {
           "id": "factory-workflow",
           "status": "satisfied",
-          "explanation": "Config v3 is exact. Orchestrator decision 2026-11-09 accepts delivery without a serving host, based on R-PREP proof; live delivery needs Scriptorium v4 compatibility. Canonical-label migration is deferred to post-merge adopt so #21 readiness and factory:hold survive this PR. No App-author exemption configured.",
+          "explanation": "Config v3 is exact. The 2026-11-09 orchestrator decision accepts source delivery without a serving host based on R-PREP proof; live delivery still needs Scriptorium v4 compatibility and homelab #350 acceptance. The published 2026-11-10 post-merge result verified all 24 v0.25.0 canonical label definitions through the retained setup operation. This run changes no labels or readiness/hold decisions. No App-author exemption is configured.",
           "changedPaths": [],
           "evidence": [
             ".factory/config.json",
-            "https://github.com/lutzseverino/homelab/issues/371#issuecomment-6739478657"
+            "https://github.com/lutzseverino/homelab/issues/371#issuecomment-6739478657",
+            "https://github.com/lutzseverino/minecraft-setup/issues/21#issuecomment-6757609021"
           ],
           "scopeValidity": {
             "afterFixes": {
@@ -2758,9 +1657,7 @@
           "id": "git-attributes",
           "status": "satisfied",
           "explanation": "Installed validator and skill executable inventory covered by bounded exact/skill patterns including new review skill; repository-owned lines and sources remain unvendored.",
-          "changedPaths": [
-            ".gitattributes"
-          ],
+          "changedPaths": [],
           "evidence": [
             ".gitattributes",
             ".repo-standards/inputs/resolved.json"
@@ -2769,12 +1666,13 @@
         {
           "id": "github-repository-configuration",
           "status": "satisfied",
-          "explanation": "Public owner repository is unambiguous; repository runner variable unset, no organization inheritance. Existing optional reviewer and App-author policy files remain absent. Label migration deferred per orchestrator; PR integration authored fix preserves configured checks and review policy.",
+          "explanation": "Public owner repository is unambiguous; repository REPO_CANON_RUNS_ON is unset, with no organization inheritance. Optional reviewer and App-author policy files remain absent. The published 2026-11-10 post-merge result verified all 24 v0.25.0 canonical label definitions; the earlier label-migration deferral is superseded. This run intentionally has no remote setup credentials and defers both remote fixes without label or ruleset mutations; that deferral is not an outstanding label migration. Existing PR integration, checks and review policy remain unchanged.",
           "changedPaths": [],
           "evidence": [
             ".repo-standards/rules/github-repository-configuration.md",
-            "gh repo view: PUBLIC",
-            "gh variable list: []"
+            "2026-11-10 gh repo view: PUBLIC, owner lutzseverino",
+            "2026-11-10 gh variable list: no repository variables",
+            "https://github.com/lutzseverino/minecraft-setup/issues/21#issuecomment-6757609021"
           ],
           "scopeValidity": {
             "afterFixes": {
@@ -2813,11 +1711,7 @@
           "id": "project-readmes",
           "status": "satisfied",
           "explanation": "Three maintained component READMEs cover purpose, component working directory, commands, configuration and documentation, and link root contribution and setup guides.",
-          "changedPaths": [
-            "manager/README.md",
-            "protocol/README.md",
-            "publisher/README.md"
-          ],
+          "changedPaths": [],
           "evidence": [
             "protocol/README.md",
             "manager/README.md",
@@ -2859,9 +1753,7 @@
           "id": "repository-readme",
           "status": "satisfied",
           "explanation": "Centered newcomer header and runtime/language badges match component manifests; installation, features and representative usage retained. MIT and shared contribution/documentation pointers resolve.",
-          "changedPaths": [
-            "README.md"
-          ],
+          "changedPaths": [],
           "evidence": [
             "README.md",
             "LICENSE",
@@ -2957,10 +1849,180 @@
     {
       "declaration": "github-repository-configuration",
       "id": "canonical-labels",
-      "reason": "The maintainer declined the overwrite: GitHub label setup requires confirmation: label factory:skip.color is \"ededed\"; the standard sets \"c5def5\"; label factory:skip.description is \"\"; the standard sets \"Ready agent work the factory must not pick up\". No changes were made."
+      "reason": "GitHub label setup requires authenticated github.com access through gh; sign in with gh auth login --hostname github.com."
+    },
+    {
+      "declaration": "github-repository-configuration",
+      "id": "pull-request-integration",
+      "reason": "GitHub PR integration setup requires authenticated github.com access through gh; sign in with gh auth login --hostname github.com."
     }
   ],
   "reused": [
+    {
+      "id": "scope:comments",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "2e8f42521e7dd6c22c2386bf8411689a470fd976722400f6c42474bcbea76c6d",
+        "rules": "20ddf6a1ca97a9aac337fe03073edde7971f7d4d8264ab3de1baadbd0f99788a",
+        "draft": "none",
+        "paths": []
+      }
+    },
+    {
+      "id": "scope:factory-workflow",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "6f8e546cfa909fd4fd090d8555de882d8a786975c088d649a490192f30ad3b7a",
+        "rules": "707eb5c25da83a633abf2bb1f37225309afea50bf0eed370afe91f423bffbfef",
+        "draft": "none",
+        "paths": []
+      }
+    },
+    {
+      "id": "scope:github-repository-configuration",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "05f27e38f22870239eac4f15f63d9ff758c87ff3c8c5098dc7b8cd66a5685616",
+        "rules": "c693028f20dd367b3b243679f8b41bfb36d80aa406846520796fcc2cdee5f78c",
+        "draft": "none",
+        "paths": []
+      }
+    },
+    {
+      "id": "scope:project-readmes",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "a2cf9e7206712b7b169ebcf901d40ded7fa655100b3afbcf825296e46291b47a",
+        "rules": "6cc1cbca7a629ab74c4e93b83f400cade77159aeb1bd2502463eafedb63a24fc",
+        "draft": "none",
+        "paths": [
+          "manager/README.md",
+          "manager/package.json",
+          "protocol/README.md",
+          "protocol/package.json",
+          "publisher/README.md",
+          "publisher/pom.xml"
+        ]
+      }
+    },
+    {
+      "id": "scope:typescript-astro-stack",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "2c41b18bc7757bc2f6b4f26cdebec67f8c9c70b25ac636562a27843d8ba4c615",
+        "rules": "ef7f2b9a05d59cb8dda6ca41e58a4b09c841f117f592c678473c83894fc0910f",
+        "draft": "decided-from",
+        "paths": [
+          "manager/README.md",
+          "manager/package.json",
+          "package.json",
+          "protocol/README.md",
+          "protocol/package.json"
+        ]
+      }
+    },
+    {
+      "id": "scope:typescript-node-stack",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "d23ae9513f022862a8be9be8d8ca30ced7ed8febef21a27ab3b3e34cbfeba937",
+        "rules": "445cd0d96ebcd04d428d19498bf95c5a23447dbb5aade4cfbd61ac07fe2b6799",
+        "draft": "decided-from",
+        "paths": [
+          "manager/README.md",
+          "manager/package.json",
+          "package.json",
+          "protocol/README.md",
+          "protocol/package.json"
+        ]
+      }
+    },
+    {
+      "id": "scope:typescript-vite-stack",
+      "kind": "scope",
+      "evidence": {
+        "discovery": "d26c9725c371c74235feef40d4cfae4d6e5c5ad4d6da13e69603155cfe06d03b",
+        "rules": "ef7f2b9a05d59cb8dda6ca41e58a4b09c841f117f592c678473c83894fc0910f",
+        "draft": "decided-from",
+        "paths": [
+          "manager/README.md",
+          "manager/package.json",
+          "package.json",
+          "protocol/README.md",
+          "protocol/package.json"
+        ]
+      }
+    },
+    {
+      "id": "assessment:comments",
+      "kind": "assessment",
+      "evidence": {
+        "judgedAgainst": {
+          "kind": "rules",
+          "sha256": "20ddf6a1ca97a9aac337fe03073edde7971f7d4d8264ab3de1baadbd0f99788a"
+        },
+        "scope": {
+          "basis": "declaration",
+          "snapshot": "sha256:f61bb6b747466f440a7bfe1ad8ac8d9c6cc81dd9a69aeeaef10fd61e5e7cfe89"
+        }
+      }
+    },
+    {
+      "id": "assessment:factory-sandbox-image",
+      "kind": "assessment",
+      "evidence": {
+        "judgedAgainst": {
+          "kind": "rules",
+          "sha256": "82fb0e50faeecbad24ce0fd3b952293df03f6128cc09bdf10eb7d0ed5bb39c14"
+        },
+        "scope": {
+          "basis": "declaration",
+          "snapshot": "sha256:9b479955c7e85a4729dbde584c77308c29b29e9122d32f6357d0cfb991a4df84"
+        }
+      }
+    },
+    {
+      "id": "assessment:git-attributes",
+      "kind": "assessment",
+      "evidence": {
+        "judgedAgainst": {
+          "kind": "rules",
+          "sha256": "ce8397df1a7819e7d8af6b65f48686f6cc0d798c361734b00535fbd60f292dcd"
+        },
+        "scope": {
+          "basis": "declaration",
+          "snapshot": "sha256:d5a56d997e8315cff3b37e62876867b5460d2e41c67181fa875bd3815b773d69"
+        }
+      }
+    },
+    {
+      "id": "assessment:project-agent-guidance",
+      "kind": "assessment",
+      "evidence": {
+        "judgedAgainst": {
+          "kind": "rules",
+          "sha256": "d28524380c291296b805f43440d09b437bc60edd390068bfbf552cdb8b982a25"
+        },
+        "scope": {
+          "basis": "declaration",
+          "snapshot": "sha256:816f6a126665880da174a9f533c4486860b1c63dd7d7ccbbb74fea37fce7055e"
+        }
+      }
+    },
+    {
+      "id": "assessment:project-readmes",
+      "kind": "assessment",
+      "evidence": {
+        "judgedAgainst": {
+          "kind": "rules",
+          "sha256": "6cc1cbca7a629ab74c4e93b83f400cade77159aeb1bd2502463eafedb63a24fc"
+        },
+        "scope": {
+          "basis": "declaration",
+          "snapshot": "sha256:fb0358ad46638f7c9ec721950b1540f62063ef3541ca7d850cc9496b6c3f9b9a"
+        }
+      }
+    },
     {
       "id": "assessment:repository-license",
       "kind": "assessment",
@@ -2972,6 +2034,20 @@
         "scope": {
           "basis": "declaration",
           "snapshot": "sha256:fb816d84f8490f401fed9da0509dfee09760d5dde05b314b1c9ea7cd706529c4"
+        }
+      }
+    },
+    {
+      "id": "assessment:repository-readme",
+      "kind": "assessment",
+      "evidence": {
+        "judgedAgainst": {
+          "kind": "rules",
+          "sha256": "2965277f0a8436f69dbeb1573dc2c905e519229ab38a26cda2599a0f11233952"
+        },
+        "scope": {
+          "basis": "declaration",
+          "snapshot": "sha256:cfc39198034a19ecc213c1d0949cc9ceff842be20f9c06d84ea5b9d08ac46881"
         }
       }
     },
@@ -3020,7 +2096,7 @@
   ],
   "assessedScopes": {
     "comments": "sha256:f61bb6b747466f440a7bfe1ad8ac8d9c6cc81dd9a69aeeaef10fd61e5e7cfe89",
-    "documentation": "sha256:fb99e27c6caeff7f5d4c2c9d476c3f4dc33d9ba82b2af8f603b72b34e52e3d8b",
+    "documentation": "sha256:c384facede2fe15c973077727cfab9366c08714273e42f47c5d5ade7893529cc",
     "factory-sandbox-image": "sha256:9b479955c7e85a4729dbde584c77308c29b29e9122d32f6357d0cfb991a4df84",
     "factory-workflow": "sha256:f61bb6b747466f440a7bfe1ad8ac8d9c6cc81dd9a69aeeaef10fd61e5e7cfe89",
     "git-attributes": "sha256:d5a56d997e8315cff3b37e62876867b5460d2e41c67181fa875bd3815b773d69",
@@ -3034,20 +2110,16 @@
     "typescript-vite-stack": "sha256:f61bb6b747466f440a7bfe1ad8ac8d9c6cc81dd9a69aeeaef10fd61e5e7cfe89"
   },
   "impact": {
-    "derived": "Contextual update: the run asks for contextual work on comments, documentation, factory-sandbox-image, factory-workflow, git-attributes, github-repository-configuration, project-agent-guidance, project-readmes, repository-readme, which needs review before it is committed. Remote setup was deferred for github-repository-configuration/canonical-labels: resolve it and run adopt again to apply it.",
+    "derived": "Contextual update: the run asks for contextual work on documentation, factory-workflow, github-repository-configuration, which needs review before it is committed. Remote setup was deferred for github-repository-configuration/canonical-labels, github-repository-configuration/pull-request-integration: resolve it and run adopt again to apply it.",
     "releases": [
-      {
-        "version": "v0.24.0",
-        "action": null
-      },
       {
         "version": "v0.25.0",
         "action": null
       }
     ],
     "steps": [
-      "Review the contextual work on comments, documentation, factory-sandbox-image, factory-workflow, git-attributes, github-repository-configuration, project-agent-guidance, project-readmes, repository-readme.",
-      "Resolve the remote setup for github-repository-configuration/canonical-labels, then run adopt again to apply it.",
+      "Review the contextual work on documentation, factory-workflow, github-repository-configuration.",
+      "Resolve the remote setup for github-repository-configuration/canonical-labels, github-repository-configuration/pull-request-integration, then run adopt again to apply it.",
       "Review and commit the update."
     ]
   }
