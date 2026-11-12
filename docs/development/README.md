@@ -41,13 +41,15 @@ Separate publisher and manager jobs run the component checks. Manager CI builds
 macOS Apple Silicon, macOS Intel, Linux x64 and Windows x64 bundles. Linux
 source validation alone does not establish native signed-release acceptance.
 
-The factory builds `.factory/Dockerfile` from stdin without a build context,
+The canonical factory input is `.scriptorium/Dockerfile`, built from stdin without a build context,
 then adds its agent layer. The combined image supplies Node.js 24/npm 11.6.2,
 JDK 21, stable Rust/rustfmt/Clippy and Linux Tauri prerequisites system-wide.
 Dependencies are installed in the fresh checkout at run time as `agent`.
 The Maven wrapper downloads its own Maven distribution.
 
-The root factory configuration uses version 3. Live factory delivery requires
+The canonical root factory configuration is `.scriptorium/config.json`, version 3.
+Before the supported adoption update, both inputs remain under `.factory/`.
+Live factory delivery requires
 a Scriptorium v4 host that accepts it; source validation does not establish
 that host or signed native-release acceptance.
 
@@ -58,6 +60,11 @@ using the pinned released factory agent layer, then runs all canonical checks
 as its actual unprivileged `agent` user. It prints the image content digest,
 head, identity and per-check exit codes, and removes its checkout, container and
 image tags afterward. No provider credentials are needed.
+The verifier prefers `.scriptorium/Dockerfile` and also supports reviewed
+pre-update revisions that still use `.factory/Dockerfile`. It fails explicitly
+if neither Dockerfile exists. Run `npm test` to check both input layouts and
+missing-input rejection without Docker or network access; those tests do not
+build an image or run the component checks in a container.
 The factory layer is source-pinned for reproducibility; it is validation tooling,
 not evidence of live factory delivery.
 
