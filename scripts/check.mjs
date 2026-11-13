@@ -51,7 +51,7 @@ function run(directory, [command, ...args]) {
 }
 
 run(".", [npm, "run", "lint"]);
-run(".", [process.execPath, "--test", "scripts/release-version.test.mjs"]);
+run(".", [npm, "test"]);
 const selected = process.argv.slice(2);
 for (const component of selected.length ? selected : Object.keys(checks)) {
   if (!Object.hasOwn(checks, component))

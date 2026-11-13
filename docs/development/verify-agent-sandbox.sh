@@ -6,7 +6,7 @@ case "$head_sha" in
   *[!0-9a-f]*|'') echo 'Expected a full lowercase Git commit SHA' >&2; exit 2 ;;
 esac
 [[ ${#head_sha} == 40 ]] || exit 2
-scratch=$(mktemp -d /var/tmp/minecraft-setup-sandbox.XXXXXX)
+scratch=$(mktemp -d "${TMPDIR:-/var/tmp}/minecraft-setup-sandbox.XXXXXX")
 export TMPDIR="$scratch"
 image="minecraft-setup-sandbox:${head_sha}"
 toolchain="${image}-toolchain"
@@ -25,12 +25,22 @@ git -C "$scratch/source" fetch --depth 1 origin "$head_sha"
 git -C "$scratch/source" checkout --detach FETCH_HEAD
 test "$(git -C "$scratch/source" rev-parse HEAD)" = "$head_sha"
 
+# Prefer canonical inputs while still verifying revisions before their adoption.
+dockerfile="$scratch/source/.scriptorium/Dockerfile"
+if [[ ! -f "$dockerfile" ]]; then
+  dockerfile="$scratch/source/.factory/Dockerfile"
+fi
+if [[ ! -f "$dockerfile" ]]; then
+  echo "No sandbox Dockerfile at .scriptorium/Dockerfile or .factory/Dockerfile in $head_sha" >&2
+  exit 2
+fi
+
 # Use the published factory's real agent layer, pinned to its immutable release
 # commit. Neither Docker build receives the checkout as a build context.
 layer_revision=008d3594c249e74b4fa8b21488b6bb124c602228
 curl -fsSL "https://raw.githubusercontent.com/lutzseverino/scriptorium/${layer_revision}/src/agent-layer.Dockerfile" \
   -o "$scratch/agent-layer.Dockerfile"
-docker build --tag "$toolchain" - < "$scratch/source/.factory/Dockerfile"
+docker build --tag "$toolchain" - < "$dockerfile"
 docker build --tag "$image" --build-arg "TOOLCHAIN_IMAGE=$toolchain" \
   --build-arg "AGENT_UID=$(id -u)" --build-arg "AGENT_GID=$(id -g)" \
   - < "$scratch/agent-layer.Dockerfile"

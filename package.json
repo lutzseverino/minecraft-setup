@@ -9,11 +9,11 @@
   "license": "MIT",
   "scripts": {
     "check": "node scripts/check.mjs",
-    "check:node": "npm run lint && node --test scripts/release-version.test.mjs && npm --prefix protocol run check && npm --prefix manager run check",
+    "check:node": "npm run lint && npm test && npm --prefix protocol run check && npm --prefix manager run check",
     "check:protocol": "node scripts/check.mjs protocol",
     "check:manager": "node scripts/check.mjs manager",
     "check:publisher": "node scripts/check.mjs publisher",
-    "test": "node --test scripts/release-version.test.mjs",
+    "test": "node --test scripts/release-version.test.mjs scripts/verify-agent-sandbox.test.mjs",
     "lint": "node protocol/node_modules/@biomejs/biome/bin/biome check ."
   }
 }
