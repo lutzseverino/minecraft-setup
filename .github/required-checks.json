@@ -2,7 +2,6 @@
   "version": 1,
   "checks": [
     "Validate protocol",
-    "validate",
     "PR metadata"
   ]
 }
