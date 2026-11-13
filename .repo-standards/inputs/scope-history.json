@@ -1,7 +1,7 @@
 {
-  "format": "repo-standards/scope-history/v6",
+  "format": "repo-standards/scope-history/v7",
   "evidence": "historical",
-  "inspection": "sha256:e80b9d449d328191e7769994b6e9b056ee9d51b30e1ac9f7c22bc13b07ab2aeb",
+  "inspection": "sha256:08b0a740ea858472f2e0501d1b35840cc5543995d0e3f385045a7458ad36d6cd",
   "resolved": {
     "description": "The standard profile plus the factory's repository files and workflow rules, for a repository a factory serves",
     "declarations": [
@@ -158,17 +158,24 @@
         "checks": [],
         "fixes": [],
         "kind": "file",
-        "target": ".factory/config.json",
-        "exact": ".factory/config.json"
+        "target": ".scriptorium/config.json",
+        "exact": ".scriptorium/config.json"
       },
       {
         "id": "factory-sandbox-image",
         "checks": [],
         "fixes": [],
-        "kind": "file",
-        "target": ".factory/Dockerfile",
+        "kind": "repository",
         "guidance": "guidance/factory-sandbox-image.md",
-        "rules": "rules/factory-sandbox-image.md"
+        "rules": "rules/factory-sandbox-image.md",
+        "targets": {
+          "paths": [
+            ".scriptorium/Dockerfile",
+            ".factory/Dockerfile",
+            ".factory/config.json"
+          ],
+          "directories": []
+        }
       },
       {
         "id": "factory-sandbox-image-workflow",
@@ -229,6 +236,24 @@
       {
         "id": "github-repository-configuration",
         "checks": [
+          {
+            "id": "required-checks",
+            "run": {
+              "executable": "node",
+              "script": "operations/check-required-checks.mjs",
+              "resources": [
+                ".agents/skills/babysit/required-checks.mjs"
+              ],
+              "arguments": []
+            },
+            "prerequisite": {
+              "version-arguments": [
+                "--version"
+              ],
+              "version": ">=24.0.0 <25.0.0 || >=26.0.0 <27.0.0"
+            },
+            "timeout-seconds": 30
+          },
           {
             "id": "pull-request-reviewer",
             "run": {
@@ -394,12 +419,36 @@
         "exact": ".github/ISSUE_TEMPLATE/implementation-ticket.yml"
       },
       {
+        "id": "issue-contract-cutoff",
+        "checks": [],
+        "fixes": [],
+        "kind": "file",
+        "target": "scripts/issue-contract-cutoff.mjs",
+        "exact": "scripts/issue-contract-cutoff.mjs"
+      },
+      {
+        "id": "issue-contract-sources",
+        "checks": [],
+        "fixes": [],
+        "kind": "file",
+        "target": "scripts/issue-contract-sources.mjs",
+        "exact": "scripts/issue-contract-sources.mjs"
+      },
+      {
+        "id": "issue-contract-store",
+        "checks": [],
+        "fixes": [],
+        "kind": "file",
+        "target": "scripts/issue-contract-store.mjs",
+        "exact": "scripts/issue-contract-store.mjs"
+      },
+      {
         "id": "issue-contract-validator",
         "checks": [],
         "fixes": [],
         "kind": "file",
-        "target": "scripts/validate-issue-contract.mjs",
-        "exact": "scripts/validate-issue-contract.mjs"
+        "target": "vendor/repo-canon/validate-issue-contract.mjs",
+        "exact": "vendor/repo-canon/validate-issue-contract.mjs"
       },
       {
         "id": "issue-contract-workflow",
@@ -706,14 +755,6 @@
         "source": ".agents/skills/improve-codebase-architecture"
       },
       {
-        "id": "skill-orchestrate",
-        "checks": [],
-        "fixes": [],
-        "kind": "skill",
-        "name": "orchestrate",
-        "source": ".agents/skills/orchestrate"
-      },
-      {
         "id": "skill-pr",
         "checks": [],
         "fixes": [],
@@ -858,8 +899,8 @@
         "checks": [],
         "fixes": [],
         "kind": "file",
-        "target": "scripts/validate.mjs",
-        "exact": "scripts/validate.mjs"
+        "target": "vendor/repo-canon/validate.mjs",
+        "exact": "vendor/repo-canon/validate.mjs"
       }
     ]
   },
@@ -976,17 +1017,24 @@
         "checks": [],
         "fixes": [],
         "kind": "file",
-        "target": ".factory/config.json",
-        "exact": ".factory/config.json"
+        "target": ".scriptorium/config.json",
+        "exact": ".scriptorium/config.json"
       },
       {
         "id": "factory-sandbox-image",
         "checks": [],
         "fixes": [],
-        "kind": "file",
-        "target": ".factory/Dockerfile",
+        "kind": "repository",
         "guidance": "guidance/factory-sandbox-image.md",
-        "rules": "rules/factory-sandbox-image.md"
+        "rules": "rules/factory-sandbox-image.md",
+        "targets": {
+          "paths": [
+            ".scriptorium/Dockerfile",
+            ".factory/Dockerfile",
+            ".factory/config.json"
+          ],
+          "directories": []
+        }
       },
       {
         "id": "factory-sandbox-image-workflow",
@@ -1044,6 +1092,24 @@
       {
         "id": "github-repository-configuration",
         "checks": [
+          {
+            "id": "required-checks",
+            "run": {
+              "executable": "node",
+              "script": "operations/check-required-checks.mjs",
+              "resources": [
+                ".agents/skills/babysit/required-checks.mjs"
+              ],
+              "arguments": []
+            },
+            "prerequisite": {
+              "version-arguments": [
+                "--version"
+              ],
+              "version": ">=24.0.0 <25.0.0 || >=26.0.0 <27.0.0"
+            },
+            "timeout-seconds": 30
+          },
           {
             "id": "pull-request-reviewer",
             "run": {
@@ -1206,12 +1272,36 @@
         "exact": ".github/ISSUE_TEMPLATE/implementation-ticket.yml"
       },
       {
+        "id": "issue-contract-cutoff",
+        "checks": [],
+        "fixes": [],
+        "kind": "file",
+        "target": "scripts/issue-contract-cutoff.mjs",
+        "exact": "scripts/issue-contract-cutoff.mjs"
+      },
+      {
+        "id": "issue-contract-sources",
+        "checks": [],
+        "fixes": [],
+        "kind": "file",
+        "target": "scripts/issue-contract-sources.mjs",
+        "exact": "scripts/issue-contract-sources.mjs"
+      },
+      {
+        "id": "issue-contract-store",
+        "checks": [],
+        "fixes": [],
+        "kind": "file",
+        "target": "scripts/issue-contract-store.mjs",
+        "exact": "scripts/issue-contract-store.mjs"
+      },
+      {
         "id": "issue-contract-validator",
         "checks": [],
         "fixes": [],
         "kind": "file",
-        "target": "scripts/validate-issue-contract.mjs",
-        "exact": "scripts/validate-issue-contract.mjs"
+        "target": "vendor/repo-canon/validate-issue-contract.mjs",
+        "exact": "vendor/repo-canon/validate-issue-contract.mjs"
       },
       {
         "id": "issue-contract-workflow",
@@ -1511,14 +1601,6 @@
         "source": ".agents/skills/improve-codebase-architecture"
       },
       {
-        "id": "skill-orchestrate",
-        "checks": [],
-        "fixes": [],
-        "kind": "skill",
-        "name": "orchestrate",
-        "source": ".agents/skills/orchestrate"
-      },
-      {
         "id": "skill-pr",
         "checks": [],
         "fixes": [],
@@ -1786,13 +1868,13 @@
         "checks": [],
         "fixes": [],
         "kind": "file",
-        "target": "scripts/validate.mjs",
-        "exact": "scripts/validate.mjs"
+        "target": "vendor/repo-canon/validate.mjs",
+        "exact": "vendor/repo-canon/validate.mjs"
       }
     ]
   },
   "discovery": {
-    "identity": "sha256:f80b0be399095d49fbbf80b39c6a4054fdbdf6ae5f481668192f90d24b480c0b",
+    "identity": "sha256:25001e867acec67cfdb7ecd88cff74f9097e007d7b6e04a266b3cfcb59e1bb02",
     "proposal": {
       "format": "repo-standards/scope/v2",
       "declarations": [
@@ -2570,7 +2652,7 @@
         },
         "docs/development/README.md": {
           "type": "file",
-          "sha256": "4f5afc447e6dc18a29cb44ea2ba1d71be4f9c9effc10674de1044d95619fb2cf",
+          "sha256": "151bf89bb619c4f543f620f80982776cf2e44a56768305388dfcb0eca6de1e42",
           "executable": false
         },
         "docs/development/component-releases.md": {
@@ -2630,7 +2712,7 @@
         },
         "docs/development/verify-agent-sandbox.sh": {
           "type": "file",
-          "sha256": "8342e7f91e603c13d572435f62f476a0f640fac57bbc15c35e1ed3298a63f1e9",
+          "sha256": "130e21383dbbf6dd410fbfabab44a5816d14e6475da750a2ab914f31094a78f2",
           "executable": true
         },
         "docs/usage/README.md": {
@@ -3122,6 +3204,7 @@
         "unresolved": [
           "Is `manager/docs` a documentation root? Its `manager/docs/adr`, `manager/docs/development`, and `manager/docs/usage` directories hold Markdown documents. If it is, include its files and a new index for each of its directories without one, as this draft does for `docs`. If it is not, its README.md files stay out of this scope.",
           "Is `publisher/docs` a documentation root? Its `publisher/docs/development` and `publisher/docs/usage` directories hold Markdown documents. If it is, include its files and a new index for each of its directories without one, as this draft does for `docs`. If it is not, its README.md files stay out of this scope.",
+          "Which of these Markdown files under `.agents` are documentation this scope must cover, such as a document to move into a documentation category: `.agents/skills/orchestrate/CREDITS.md`, `.agents/skills/orchestrate/SKILL.md`, `.agents/skills/orchestrate/references/close.md`, `.agents/skills/orchestrate/references/launches.md`, and `.agents/skills/orchestrate/references/templates.md`? Include each one, with its destination when it moves.",
           "Which of these Markdown files under `manager` are documentation this scope must cover, such as a document to move into a documentation category: `manager/docs/adr/signed-application-update-channel.md`, `manager/docs/adr/verified-launcher-profile-formats.md`, `manager/docs/development/explanation/architecture.md`, `manager/docs/development/explanation/safety-model.md`, `manager/docs/development/how-to/publish-a-release.md`, `manager/docs/development/how-to/run-locally.md`, `manager/docs/development/how-to/validate-sklauncher.md`, `manager/docs/usage/reference/application-updates.md`, `manager/docs/usage/reference/implementation-status.md`, `manager/docs/usage/reference/launcher-validation.md`, `manager/docs/usage/reference/manifest-integration.md`, `manager/docs/usage/reference/supported-capabilities.md`, and `manager/docs/usage/reference/versioning.md`? Include each one, with its destination when it moves.",
           "Which of these Markdown files under `protocol` are documentation this scope must cover, such as a document to move into a documentation category: `protocol/spec/v1/attestation.md`, `protocol/spec/v1/canonicalization.md`, `protocol/spec/v1/http.md`, and `protocol/spec/v1/manifest.md`? Include each one, with its destination when it moves.",
           "Which of these Markdown files under `publisher` are documentation this scope must cover, such as a document to move into a documentation category: `publisher/docs/development/explanation/architecture.md`, `publisher/docs/development/explanation/publication-model.md`, `publisher/docs/development/explanation/setup-compliance.md`, `publisher/docs/development/how-to/publish-a-release.md`, `publisher/docs/usage/how-to/configure-login-gate.md`, `publisher/docs/usage/how-to/configure-reverse-proxy.md`, `publisher/docs/usage/reference/commands-and-permissions.md`, `publisher/docs/usage/reference/configuration.md`, `publisher/docs/usage/reference/versioning.md`, and `publisher/docs/usage/tutorials/publish-your-first-setup.md`? Include each one, with its destination when it moves."
@@ -3201,7 +3284,7 @@
       {
         "id": "factory-workflow",
         "source": "discovery/factory-workflow.md",
-        "sha256": "6f8e546cfa909fd4fd090d8555de882d8a786975c088d649a490192f30ad3b7a",
+        "sha256": "0e23a4587d04ec99790ffe76f8a99f5477ccfa2428b3f46609327fcdef92d435",
         "executable": false
       },
       {
@@ -3850,6 +3933,11 @@
           "sha256": "7848a6998fc1dc608b8194b37e3398eb5e10574c06d5e4a5283d0c65970777e7",
           "executable": false
         },
+        ".github/required-checks.json": {
+          "type": "file",
+          "sha256": "da7ba93674a3a055253d95531ccd4cc0dc39e1851e0aa7c3a432fadd3f85d16b",
+          "executable": false
+        },
         ".github/scripts/check-pr-policy.py": {
           "type": "file",
           "sha256": "b568d8ea1004829144b0e0630610bba035b0e94b4c34c90df1df5b69c9e37312",
@@ -3952,7 +4040,7 @@
         },
         "biome.json": {
           "type": "file",
-          "sha256": "058f2cb764b2b7c5974ed55f60d77d5e54aff913ca2c23ced4a4e5913538acb0",
+          "sha256": "06197fb4539aab461a3ca5c96110311445fe8b5ebb6563309c2a67c54e289369",
           "executable": false
         },
         "docs/README.md": {
@@ -3997,7 +4085,7 @@
         },
         "docs/development/README.md": {
           "type": "file",
-          "sha256": "4f5afc447e6dc18a29cb44ea2ba1d71be4f9c9effc10674de1044d95619fb2cf",
+          "sha256": "151bf89bb619c4f543f620f80982776cf2e44a56768305388dfcb0eca6de1e42",
           "executable": false
         },
         "docs/development/component-releases.md": {
@@ -4057,7 +4145,7 @@
         },
         "docs/development/verify-agent-sandbox.sh": {
           "type": "file",
-          "sha256": "8342e7f91e603c13d572435f62f476a0f640fac57bbc15c35e1ed3298a63f1e9",
+          "sha256": "130e21383dbbf6dd410fbfabab44a5816d14e6475da750a2ab914f31094a78f2",
           "executable": true
         },
         "docs/usage/README.md": {
@@ -5032,7 +5120,7 @@
         },
         "package.json": {
           "type": "file",
-          "sha256": "c97d98b0c06eff07ca6f44f1c0cff1e454fb7b85b5396d40f382e3b9ab3d3d19",
+          "sha256": "b5e35fd90a2a3c5f803370ea946eac1ea6c066dfed4768524b9f60e9b619386e",
           "executable": false
         },
         "protocol/.gitignore": {
@@ -5682,7 +5770,7 @@
         },
         "scripts/check.mjs": {
           "type": "file",
-          "sha256": "b1f9fee2a916fa16fe57d79e68ff56c3001a10341dd72acb27f7f20dc4dc57c5",
+          "sha256": "9ff2b2d8b1ad7de0d670af54247cda8c631f6062928c94bb1b053ec0022f7e66",
           "executable": false
         },
         "scripts/release-version.mjs": {
@@ -5703,6 +5791,11 @@
         "scripts/validate.mjs": {
           "type": "file",
           "sha256": "daeedb8713e64e0334ede3825297ec6338a85ee8051c0dc0385f5533373ecc32",
+          "executable": false
+        },
+        "scripts/verify-agent-sandbox.test.mjs": {
+          "type": "file",
+          "sha256": "cdf8c63aecc99b5f7c90c7b8c5bc24a7ef42e6c15a8efdef44e0a793a77dffe0",
           "executable": false
         },
         "vendor/marked/LICENSE": {
@@ -6044,6 +6137,7 @@
           ".github/ISSUE_TEMPLATE",
           ".github/PULL_REQUEST_TEMPLATE.md",
           ".github/dependabot.yml",
+          ".github/required-checks.json",
           ".github/scripts",
           ".github/workflows"
         ],
@@ -6751,7 +6845,8 @@
           "scripts/release-version.mjs",
           "scripts/release-version.test.mjs",
           "scripts/validate-issue-contract.mjs",
-          "scripts/validate.mjs"
+          "scripts/validate.mjs",
+          "scripts/verify-agent-sandbox.test.mjs"
         ],
         "vendor": [
           "vendor/marked",
@@ -7829,43 +7924,5 @@
       }
     }
   },
-  "scopeChanges": [
-    {
-      "id": "documentation",
-      "additions": [],
-      "removals": [
-        "manager/docs/decisions/README.md",
-        "manager/docs/decisions/signed-application-update-channel.md",
-        "manager/docs/decisions/verified-launcher-profile-formats.md",
-        "manager/docs/explanation/README.md",
-        "manager/docs/explanation/architecture.md",
-        "manager/docs/explanation/safety-model.md",
-        "manager/docs/how-to/README.md",
-        "manager/docs/how-to/publish-a-release.md",
-        "manager/docs/how-to/run-locally.md",
-        "manager/docs/how-to/validate-sklauncher.md",
-        "manager/docs/reference/README.md",
-        "manager/docs/reference/application-updates.md",
-        "manager/docs/reference/implementation-status.md",
-        "manager/docs/reference/launcher-validation.md",
-        "manager/docs/reference/manifest-integration.md",
-        "manager/docs/reference/supported-capabilities.md",
-        "manager/docs/reference/versioning.md",
-        "publisher/docs/explanation/README.md",
-        "publisher/docs/explanation/architecture.md",
-        "publisher/docs/explanation/publication-model.md",
-        "publisher/docs/explanation/setup-compliance.md",
-        "publisher/docs/how-to/README.md",
-        "publisher/docs/how-to/configure-login-gate.md",
-        "publisher/docs/how-to/configure-reverse-proxy.md",
-        "publisher/docs/how-to/publish-a-release.md",
-        "publisher/docs/reference/README.md",
-        "publisher/docs/reference/commands-and-permissions.md",
-        "publisher/docs/reference/configuration.md",
-        "publisher/docs/reference/versioning.md",
-        "publisher/docs/tutorials/README.md",
-        "publisher/docs/tutorials/publish-your-first-setup.md"
-      ]
-    }
-  ]
+  "scopeChanges": []
 }
