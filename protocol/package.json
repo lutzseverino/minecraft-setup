@@ -15,7 +15,7 @@
     "@biomejs/biome": "2.5.1",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
-    "canonicalize": "^3.0.0"
+    "canonicalize": "^5.1.0"
   },
   "engines": {
     "node": ">=24"
