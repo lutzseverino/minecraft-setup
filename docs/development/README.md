@@ -36,7 +36,8 @@ For interactive development, run `npm run tauri:dev` or `npm run dev` from
 Both consumers use the single sibling `protocol/` tree. No submodule setup is
 required. Normative schemas/specification remain language-neutral.
 
-CI retains `Validate protocol` and the root PR-policy `validate` contexts.
+CI retains `Validate protocol` for protocol checks and `PR metadata` for
+pull request text validation.
 Separate publisher and manager jobs run the component checks. Manager CI builds
 macOS Apple Silicon, macOS Intel, Linux x64 and Windows x64 bundles. Linux
 source validation alone does not establish native signed-release acceptance.
