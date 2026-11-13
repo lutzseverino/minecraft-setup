@@ -12,7 +12,7 @@
     "validate": "node scripts/validate-fixtures.mjs"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.1",
+    "@biomejs/biome": "2.6.6",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "canonicalize": "^3.0.0"
